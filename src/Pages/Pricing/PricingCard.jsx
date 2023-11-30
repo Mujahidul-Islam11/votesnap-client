@@ -16,7 +16,7 @@ const PricingCard = () => {
           </ul>
         </div>
 
-        <div className="mt-4 font-bold text-xl">$9.99/month</div>
+        <div className="mt-4 font-bold text-xl">$33.4/month</div>
       </div>
 
       <div className="px-6 py-4">

@@ -8,7 +8,6 @@ import swal from "sweetalert";
 import SurveysCard from "../SurveysCard/SurveysCard";
 
 const Surveys = () => {
-
   const axiosSecure = AxiosSecure();
   // eslint-disable-next-line no-unused-vars
   const { user } = useContext(AuthConext);
@@ -20,11 +19,11 @@ const Surveys = () => {
     },
   });
 
-  
-
   return (
     <div>
-      <div className="grid md:grid-cols-4 gap-6">
+      <div
+        className="grid md:grid-cols-4 gap-6"
+      >
         {published?.map((sur) => (
           <SurveysCard
             key={sur._id}

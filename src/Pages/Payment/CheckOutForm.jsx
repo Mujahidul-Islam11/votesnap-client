@@ -1,23 +1,106 @@
+// import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
+// import { useContext, useEffect, useState } from "react";
+// import AxiosSecure from "../../Hooks/AxiosSecure/AxiosSecure";
+// import { AuthConext } from "../../AuthProvider/AuthProvider";
+
+// const CheckOutForm = () => {
+//   const stripe = useStripe();
+//   const elements = useElements();
+//   const [error, setError] = useState();
+//   const axiosSecure = AxiosSecure();
+//   const [clientSecret, setClientSecret] = useState("");
+//   const {user} = useContext(AuthConext)
+
+//   useEffect(() => {
+//     axiosSecure.post("/create-payment-intent", { price: 100 }).then((res) => {
+//       console.log(res.data.clientSecret);
+//       setClientSecret(res.data.clientSecret);
+//     });
+//   }, [axiosSecure]);
+  
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     if (!stripe || !elements) {
+//       return;
+//     }
+//     const card = elements.getElement(CardElement);
+//     if (card === null) {
+//       return;
+//     }
+//     const { error, paymentMethod } = await stripe.createPaymentMethod({
+//       type: "card",
+//       card,
+//     });
+//     if (error) {
+//       console.log("[error]", error);
+//       setError(error.message);
+//     } else {
+//       console.log("[PaymentMethod]", paymentMethod);
+//       setError("");
+//     }
+//   };
+//   return (
+//     <form className="mx-20" onSubmit={handleSubmit}>
+//       <CardElement
+//         options={{
+//           style: {
+//             base: {
+//               fontSize: "16px",
+//               color: "#424770",
+//               "::placeholder": {
+//                 color: "#aab7c4",
+//               },
+//             },
+//             invalid: {
+//               color: "#9e2146",
+//             },
+//           },
+//         }}
+//       ></CardElement>
+//       <button disabled={!stripe || !clientSecret} type="submit" className="btn bg-[#E4CDFB]  ">
+//         Pay
+//       </button>
+//       <p className="text-red-600">{error}</p>
+//     </form>
+//   );
+// };
+
+// export default CheckOutForm;
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+
+import Swal from "sweetalert2";
+import { AuthConext } from "../../AuthProvider/AuthProvider";
 import AxiosSecure from "../../Hooks/AxiosSecure/AxiosSecure";
 
+
 const CheckOutForm = () => {
+  const { user } = useContext(AuthConext)
+
   const stripe = useStripe();
   const elements = useElements();
-  const [error, setError] = useState();
-  const axiosSecure = AxiosSecure();
+  const [error, setError] = useState("");
   const [clientSecret, setClientSecret] = useState("");
+  const [tranjectoin, setTranjectoinId] = useState("");
+  const axiosSecure = AxiosSecure();
+
+  const totalPrice = 33.5;
 
   useEffect(() => {
-    axiosSecure.post("/create-payment-intent", { price: 100 }).then((res) => {
-      console.log(res.data.clientSecret);
-      setClientSecret(res.data.clientSecret);
-    });
-  }, [axiosSecure]);
+    axiosSecure
+      .post("/create-payment-intent", { price: totalPrice })
+      .then((res) => {
+        console.log(res.data.clientSecret);
+        setClientSecret(res.data.clientSecret);
+      })
+      .catch((error) => {
+        console.error("Error fetching client secret:", error);
+      });
+  }, [axiosSecure, totalPrice]);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handelSubmit = async (event) => {
+    event.preventDefault();
     if (!stripe || !elements) {
       return;
     }
@@ -30,36 +113,89 @@ const CheckOutForm = () => {
       card,
     });
     if (error) {
-      console.log("[error]", error);
+      console.log("Payment error", error);
       setError(error.message);
     } else {
-      console.log("[PaymentMethod]", paymentMethod);
+      console.log("Payment method", paymentMethod);
       setError("");
     }
+
+    // confirm payment
+    const { paymentIntent, error: confirmError } =
+      await stripe.confirmCardPayment(clientSecret, {
+        payment_method: {
+          card: card,
+          billing_details: {
+            email: user?.email || "anounymus",
+            name: user?.displayName || "anounymus",
+          },
+        },
+      });
+
+    if (confirmError) {
+      console.log("confirmed error");
+    } else {
+      console.log("payment intent", paymentIntent);
+      if (paymentIntent.status === "succeeded") {
+        console.log("tranjectoin is", paymentIntent.id);
+        setTranjectoinId(paymentIntent.id);
+
+        const payment = {
+          email: user.email,
+          price: totalPrice,
+          tranjectoin: paymentIntent.id,
+          date: new Date(),
+        };
+
+        const res = await axiosSecure.post("/payments", payment);
+        console.log("payment saved", res.data);
+        if (res.data?.paymentResult?.inserteId) {
+          Swal.fire({
+            title: "payment!",
+            text: "Your payment has been done.",
+            icon: "success",
+          });
+        }
+      }
+    }
   };
+  //  console.log("Your tranjectoin id",{tranjectoin.id});
+
   return (
-    <form className="mx-20" onSubmit={handleSubmit}>
-      <CardElement
-        options={{
-          style: {
-            base: {
-              fontSize: "16px",
-              color: "#424770",
-              "::placeholder": {
-                color: "#aab7c4",
+    <div className="w-1/2  mx-auto card p-5 bg-inherit">
+      <h3 className="text-center font-bold my-10 text-xl">Payment here</h3>
+      <form onSubmit={handelSubmit}>
+        <CardElement
+          options={{
+            style: {
+              base: {
+                fontSize: "16px",
+                color: "#424770",
+                "::placeholder": {
+                  color: "#aab7c4",
+                },
+              },
+              invalid: {
+                color: "#9e2146",
               },
             },
-            invalid: {
-              color: "#9e2146",
-            },
-          },
-        }}
-      ></CardElement>
-      <button disabled={!stripe || !clientSecret} type="submit" className="btn bg-[#E4CDFB]  ">
-        Pay
-      </button>
-      <p className="text-red-600">{error}</p>
-    </form>
+          }}
+        />
+        <button
+          className="btn btn-sm btn-primary my-4"
+          type="submit"
+          disabled={!stripe || !clientSecret}
+        >
+          Pay
+        </button>
+        <p className="text-red-500 text-2xl"> {error} </p>
+
+        <p className="text-red-600"> {error} </p>
+        {tranjectoin && (
+          <p className="text-green-600">Your tranjectoin id {tranjectoin} </p>
+        )}
+      </form>
+    </div>
   );
 };
 

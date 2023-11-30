@@ -5,19 +5,15 @@ import {
   FaMoneyBill,
   FaUserCircle,
   FaEdit,
-  FaComments,
   FaExclamationCircle,
   FaUser,
 } from "react-icons/fa";
 import { MdSettings } from 'react-icons/md';
 import { NavLink, Outlet } from "react-router-dom";
 import UseAdmin from "./UseAdmin/UseAdmin";
-import { useContext } from "react";
-import { AuthConext } from "../../AuthProvider/AuthProvider";
 
 const Dashboard = () => {
   let [userRole] = UseAdmin();
-  const {user} = useContext(AuthConext)
 
   return (
     <div className="flex border container mx-auto">
@@ -35,12 +31,6 @@ const Dashboard = () => {
                 <NavLink to={"/dashboard/adminFeeback"}>
                   <FaExclamationCircle></FaExclamationCircle>
                   Admin Feedback
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to={"/dashboard/userFeedback"}>
-                  <FaComments></FaComments>
-                  User Feedback
                 </NavLink>
               </li>
               <li>
@@ -115,7 +105,25 @@ const Dashboard = () => {
           )}
         </ul>
         <ul className="menu">
-          {user=== 'User' && (
+          {userRole === 'User' && (
+            <>
+              <li>
+                <NavLink to={"/"}>
+                  <FaHome></FaHome>
+                  Home
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to={"/dashboard/profile"}>
+                  <FaUser></FaUser>
+                  Profile
+                </NavLink>
+              </li>
+            </>
+          )}
+        </ul>
+        <ul className="menu">
+          {userRole === 'Pro User' && (
             <>
               <li>
                 <NavLink to={"/"}>

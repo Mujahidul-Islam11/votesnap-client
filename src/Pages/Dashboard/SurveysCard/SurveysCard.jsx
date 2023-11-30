@@ -13,21 +13,7 @@ const SurveysCard = ({ survey, refetch }) => {
   const axiosSecure = AxiosSecure();
 
   console.log(survey._id);
-  // const handleComment = (event) => {
-  //   event.preventDefault();
-  //   console.log(id)
-  //   const form = event.target;
-  //   const comments = form.comments.value;
-  //   const email = user?.email;
-  //   const photo = user?.photoURL;
-  //   const name = user?.displayName;
-  //   
-  // };
-  
-
-  
-  
-
+ 
   const { data: commentsData = [] } = useQuery({
     queryKey: ["comment"],
     queryFn: async () => {

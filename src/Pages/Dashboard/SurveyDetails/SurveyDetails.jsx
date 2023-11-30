@@ -13,14 +13,17 @@ import { MdSend } from "react-icons/md";
 import { useContext } from "react";
 import { AuthConext } from "../../../AuthProvider/AuthProvider";
 import swal from "sweetalert";
-import { data } from "autoprefixer";
 import AxiosOpen from "../../../Hooks/AxiosSecure/AxiosOpen";
 import Swal from "sweetalert2";
+import UseAdmin from "../UseAdmin/UseAdmin";
+import moment from "moment/moment";
+import UserPieChart from "../../UserPieChart/UserPieChart";
 
 const SurveyDetails = () => {
   const { user } = useContext(AuthConext);
-
+  const [userRole] = UseAdmin();
   const { id } = useParams();
+  const newDate = moment().format("YYYY-MM-DD");
 
   const axiosPublic = AxiosOpen();
   const { data, refetch } = useQuery({
@@ -93,28 +96,77 @@ const SurveyDetails = () => {
 
   //  yes voted handler
 
-  const handleYesVote = async(vote) => {
-    const data = {
-     userId : user?.email,
-     userName : user?.displayName,
-     updatedYesVoted : vote.yesVoted
-
-  }
-
-  // const servayRes = await axiosSecure.post(
-  //   `/addComment?id=${data.surveyId}`,
-  // );
-};
-
-  const handleNoVote = (vote) => {
-    const updateVote = vote.noVoted;
-    const noVoted = Number(updateVote);
-    axiosPublic.patch(`/no/${vote._id}`, { noVoted: noVoted }).then((res) => {
+  const handleYesVote = async (vote) => {
+    try {
+      const updateVote = vote.yesVoted;
+      const yesVoted = Number(updateVote);
+      console.log(yesVoted);
+      const response = await axiosPublic.patch(
+        `/yes/${user?.email}/${vote._id}`,
+        {
+          yesVoted: yesVoted,
+          userName: user?.displayName,
+          vote: "Yes",
+          title: vote.title,
+          category: vote.category,
+          report: "",
+        }
+      );
       refetch();
-      if (res.data.modifiedCount > 0) {
-        console.log(res.data);
+
+      if (response.status >= 200 && response.status <= 299) {
+        const modifiedCount = response.data.modifiedCount;
+        console.log("Response data:", response.data);
+
+        if (modifiedCount > 0) {
+          console.log("Yes vote updated successfully");
+        }
+      } else {
+        console.error(
+          "Error updating yes vote:",
+          response.status,
+          response.data
+        );
       }
-    });
+    } catch (error) {
+      console.error("Error handling yes vote:", error);
+    }
+  };
+  const handleNoVote = async (vote) => {
+    try {
+      const updateVote = vote.noVoted;
+      const noVoted = Number(updateVote);
+
+      const response = await axiosPublic.patch(
+        `/no/${user?.email}/${vote._id}`,
+        {
+          noVoted: noVoted,
+          userName: user?.displayName,
+          title: vote.title,
+          vote: "No",
+          category: vote.category,
+          report: "",
+        }
+      );
+      refetch();
+
+      if (response.status >= 200 && response.status <= 299) {
+        const modifiedCount = response.data.modifiedCount;
+        console.log("Response data:", response.data);
+
+        if (modifiedCount > 0) {
+          console.log("no vote updated successfully");
+        }
+      } else {
+        console.error(
+          "Error updating no vote:",
+          response.status,
+          response.data
+        );
+      }
+    } catch (error) {
+      console.error("Error handling no vote:", error);
+    }
   };
 
   const handleReport = (report) => {
@@ -144,133 +196,162 @@ const SurveyDetails = () => {
       Swal.close();
     });
   };
-
   return (
-    <div className="card card-compact md:p-6 md:mx-20 bg-base-100 shadow-xl">
-      <div className="card-body">
-        <h2 className="card-title">{data?.title}</h2>
-        <p>Published Date : {data?.publishedDate}</p>
-        <p>{data?.description}</p>
-        <p className="font-bold">Category : {data?.category}</p>
-        <div>
-          {/* report and voting section */}
-          <h3 className="flex items-center text-xl font-bold gap-2">
-            Are Interested In Our Survey
-            <FaQuestionCircle></FaQuestionCircle>
-          </h3>
-          <div className="flex gap-6 my-4 items-center">
-            <button onClick={() => handleYesVote(data)} className="btn">
-              Yes {data?.yesVoted}
-            </button>
-            <button onClick={() => handleNoVote(data)} className="btn">
-              No {data?.noVoted}
-            </button>
-
-            <div>
+    <div className="md:flex">
+      <div className="card card-compact bg-base-100 md:p-6 md:mx-20  shadow-xl">
+        <div className="card-body">
+          <h2 className="text-2xl">{data?.title}</h2>
+          <p>Published Date : {data?.publishedDate}</p>
+          <p>{data?.description}</p>
+          <p className="font-bold">Category : {data?.category}</p>
+          <div>
+            {/* report and voting section */}
+            <h3 className="flex items-center text-xl font-semibold gap-2">
+              Will You Like To Vote Us
+              <FaQuestionCircle></FaQuestionCircle>
+            </h3>
+            <p>Deadline : {data?.deadline}</p>
+            <div className="flex gap-6 my-4 items-center">
               <button
-                onClick={() => handleReport(data?._id)}
-                className="rounded-full flex items-center cursor-pointer text-red-600"
+                disabled={
+                  newDate > data?.deadline ||
+                  userRole === "Admin" ||
+                  userRole === "Surveyor"
+                }
+                onClick={() => handleYesVote(data)}
+                className="btn"
               >
-                Report : <FaFlag></FaFlag>
+                Yes {data?.yesVoted}
               </button>
-            </div>
-          </div>
-          {/* like dislike section */}
+              <button
+                disabled={
+                  newDate > data?.deadline ||
+                  userRole === "Admin" ||
+                  userRole === "Surveyor"
+                }
+                onClick={() => handleNoVote(data)}
+                className="btn"
+              >
+                No {data?.noVoted}
+              </button>
 
-          <div className="mb-2">
-            <div className="flex">
-              <div className="flex gap-4">
-                <div>
-                  <button
-                    onClick={() => handleLike(data)}
-                    className="btn btn-like "
-                  >
-                    <FaThumbsUp />
-                    <p>{data?.likeCount}</p>
-                  </button>
-                </div>
-
-                <div>
-                  <button
-                    onClick={() => handleDisLike(data)}
-                    className="btn btn-dislike"
-                  >
-                    <FaThumbsDown />
-                    <p>{data?.dislikeCount}</p>
-                  </button>
-                </div>
-              </div>
-
-              {/* comment section  */}
-
-              <div className="tooltip" data-tip="Comment">
+              <div>
                 <button
-                  className="btn ml-4"
-                  onClick={() =>
-                    document.getElementById("my_modal_3").showModal()
-                  }
+                  onClick={() => handleReport(data?._id)}
+                  className="rounded-full flex items-center cursor-pointer text-red-600"
                 >
-                  <FaComment></FaComment>
+                  Report : <FaFlag></FaFlag>
                 </button>
-                <dialog id="my_modal_3" className="modal">
-                  <div className="modal-box">
-                    <form method="dialog">
-                      {/* if there is a button in form, it will close the modal */}
-                      <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
-                        ✕
-                      </button>
-                    </form>
-                    <h3 className="font-bold border-2 py-2 mx-16 text-lg mb-10">
-                      Comments
-                    </h3>
-                    <div className="my-10">
-                      {commentsId?.map((comment) => (
-                        <div key={comment._id}>
-                          <div className="flex my-4 mx-4">
-                            <img
-                              src={comment.photo}
-                              className="w-[40px] rounded-full"
-                              alt=""
-                            />
-                            <div>
-                              <div className="flex gap-5">
-                                <h3 className="font-bold flex ml-3 justify-start">
-                                  {comment.name}
-                                </h3>
-                                <p>{comment.timestamp}</p>
-                              </div>
-                              <p className="ml-3 flex justify-start">
-                                {comment.comments}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                    <div className="mb-4">
-                      <form onSubmit={handleDoneComment} className="flex">
-                        <input
-                          type="text"
-                          name="comments"
-                          placeholder="type your comment here"
-                          className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
-                        />
-                        <button className="btn rounded-full ml-4">
-                          <MdSend></MdSend>
+              </div>
+            </div>
+            {/* like dislike section */}
+
+            <div className="mb-2">
+              <div className="flex">
+                <div className="flex gap-4">
+                  <div>
+                    <button
+                      onClick={() => handleLike(data)}
+                      className="btn btn-like "
+                    >
+                      <FaThumbsUp />
+                      <p>{data?.likeCount}</p>
+                    </button>
+                  </div>
+
+                  <div>
+                    <button
+                      onClick={() => handleDisLike(data)}
+                      className="btn btn-dislike"
+                    >
+                      <FaThumbsDown />
+                      <p>{data?.dislikeCount}</p>
+                    </button>
+                  </div>
+                </div>
+
+                {/* comment section  */}
+
+                <div className="tooltip" data-tip="Comment">
+                  <button
+                    className="btn ml-4"
+                    onClick={() =>
+                      document.getElementById("my_modal_3").showModal()
+                    }
+                  >
+                    <FaComment></FaComment>
+                  </button>
+
+                  <dialog id="my_modal_3" className="modal">
+                    <div className="modal-box">
+                      <form method="dialog">
+                        {/* if there is a button in form, it will close the modal */}
+                        <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+                          ✕
                         </button>
                       </form>
+                      <h3 className="font-bold border-2 py-2 mx-16 text-lg mb-10">
+                        Comments
+                      </h3>
+                      <div className="my-10">
+                        {commentsId?.map((comment) => (
+                          <div key={comment._id}>
+                            <div className="flex my-4 mx-4">
+                              <img
+                                src={comment.photo}
+                                className="w-[40px] rounded-full"
+                                alt=""
+                              />
+                              <div>
+                                <div className="flex gap-5">
+                                  <h3 className="font-bold flex ml-3 justify-start">
+                                    {comment.name}
+                                  </h3>
+                                  <p>{comment.timestamp}</p>
+                                </div>
+                                <p className="ml-3 flex justify-start">
+                                  {comment.comments}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="mb-4">
+                        {userRole === "Pro User" && (
+                          <form onSubmit={handleDoneComment} className="flex">
+                            <input
+                              type="text"
+                              name="comments"
+                              placeholder="type your comment here"
+                              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+                            />
+                            <button className="btn rounded-full ml-4">
+                              <MdSend></MdSend>
+                            </button>
+                          </form>
+                        )}
+                      </div>
                     </div>
-                  </div>
-                </dialog>
+                  </dialog>
+                </div>
               </div>
             </div>
           </div>
+          <NavLink to={"/surveys"}>
+            <div className="card-actions justify-end">
+              <button className="btn btn-primary">Go Back</button>
+            </div>
+          </NavLink>
         </div>
-        <NavLink to={"/surveys"}>
-          <div className="card-actions justify-end">
-            <button className="btn btn-primary">Go Back</button>
-          </div>
-        </NavLink>
+      </div>
+      <div>
+        <UserPieChart
+          yesVote={data?.yesVoted}
+          noVote={data?.noVoted}
+          likeVote={data?.likeCount}
+          dislikeVote={data?.dislikeCount}
+        ></UserPieChart>
       </div>
     </div>
   );

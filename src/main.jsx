@@ -16,7 +16,6 @@ import SurveyManagment from "./Pages/Dashboard/SurveyManagement/SurveyManagment.
 import CreateSurvey from "./Pages/Dashboard/CreateSurvey/CreateSurvey.jsx";
 import ManageSurveys from "./Pages/Dashboard/ManageSurveys/ManageSurveys.jsx";
 import AdminFeedBack from "./Pages/Dashboard/AdminFeedBack/AdminFeedBack.jsx";
-import UserFeedBack from "./Pages/Dashboard/UserFeedBack/UserFeedBack.jsx";
 import Surveys from "./Pages/Dashboard/Surveys/Surveys.jsx";
 import SurveyDetails from "./Pages/Dashboard/SurveyDetails/SurveyDetails.jsx";
 import PrivateRoute from "./Pages/PrivateRoutes/PrivateRoute.jsx"
@@ -26,6 +25,10 @@ import UserProfile from "./Pages/Dashboard/UserProfile/UserProfile.jsx";
 import Edit from "./Pages/Dashboard/Edit/Edit.jsx";
 import PricingCard from "./Pages/Pricing/PricingCard.jsx";
 import Payment from "./Pages/Payment/Payment.jsx";
+import PaymentHistory from "./Pages/Dashboard/PaymentHistory/PaymentHistory.jsx";
+import AboutUs from "./Pages/AboutUs/AboutUs.jsx";
+import SurveyResponse from "./Pages/Dashboard/SurveyResponse/SurveyResponse.jsx";
+import Analytics from "./Pages/Dashboard/Analytics/Analytics.jsx";
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
@@ -49,20 +52,24 @@ const router = createBrowserRouter([
         element: <ContactUs></ContactUs>,
       },
       {
+        path: "/aboutUs",
+        element: <AboutUs></AboutUs>,
+      },
+      {
         path: "/surveys",
-        element: <Surveys></Surveys>,
+        element: <PrivateRoute><Surveys></Surveys></PrivateRoute>,
       },
       {
         path: "/details/:id",
-        element: <SurveyDetails></SurveyDetails>
+        element: <PrivateRoute><SurveyDetails></SurveyDetails></PrivateRoute>
       },
       {
         path: "/pricing",
-        element: <PricingCard></PricingCard>
+        element: <PrivateRoute><PricingCard></PricingCard></PrivateRoute>
       },
       {
         path: "/payment",
-        element: <Payment></Payment>
+        element: <PrivateRoute><Payment></Payment></PrivateRoute>
       },
     ],
   },
@@ -84,11 +91,11 @@ const router = createBrowserRouter([
       },
       {
         path: "paymentOverview",
-        element: <AdminPrivateRoute><div></div></AdminPrivateRoute>,
+        element: <AdminPrivateRoute><PaymentHistory></PaymentHistory></AdminPrivateRoute>,
       },
       {
         path: "analytics",
-        element: <AdminPrivateRoute><div></div></AdminPrivateRoute>,
+        element: <AdminPrivateRoute><Analytics></Analytics></AdminPrivateRoute>,
       },
       {
         path: "createSurvey",
@@ -103,12 +110,8 @@ const router = createBrowserRouter([
         element: <SurveyorPrivateRoute><AdminFeedBack></AdminFeedBack></SurveyorPrivateRoute>,
       },
       {
-        path: "userFeedback",
-        element: <SurveyorPrivateRoute><UserFeedBack></UserFeedBack></SurveyorPrivateRoute>,
-      },
-      {
         path: "surveyResponse",
-        element: <SurveyorPrivateRoute><div></div></SurveyorPrivateRoute>,
+        element: <SurveyorPrivateRoute><SurveyResponse></SurveyResponse></SurveyorPrivateRoute>,
       },
       {
         path: "edit/:id",

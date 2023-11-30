@@ -15,6 +15,7 @@ const CreateSurvey = () => {
     const title = form.title.value;
     const description = form.description.value;
     const category = form.category.value;
+    const deadline = form.category.deadline;
     const likeCount = 0;
     const dislikeCount = 0;
     const yesVoted = 0;
@@ -28,7 +29,8 @@ const CreateSurvey = () => {
       category,
       email,
       likeCount,
-      dislikeCount
+      dislikeCount,
+      deadline
     );
     const surveyData = {
       title,
@@ -40,7 +42,8 @@ const CreateSurvey = () => {
       yesVoted,
       noVoted,
       status,
-      surveyId
+      surveyId,
+      deadline
     };
     axiosSecure.post("/surveys", surveyData).then((res) => {
       console.log(res.data);
@@ -50,7 +53,7 @@ const CreateSurvey = () => {
           "Yoo your survey has been created successfully",
           "success"
         );
-        navigate('/manageSurveys')
+        navigate('/dashboard/manageSurveys')
       }
     });
   };
@@ -67,6 +70,17 @@ const CreateSurvey = () => {
             type="text"
             name="title"
             placeholder="Title of the survey"
+            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+          />
+        </div>
+        <div className="mb-4">
+          <label className="block text-gray-600 text-sm font-medium mb-2">
+            Deadline
+          </label>
+          <input
+            type="date"
+            name="deadline"
+            placeholder="Add survey deadline"
             className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
           />
         </div>

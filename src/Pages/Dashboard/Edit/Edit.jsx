@@ -23,11 +23,13 @@ const Edit = () => {
     const form = e.target;
     const title = form.title.value;
     const category = form.category.value;
+    const deadline = form.deadline.value;
     const description = form.description.value;
     const surveyData = {
         title,
         description,
         category,
+        deadline,
       };
       console.log(surveyData)
     axiosSecure.patch(`/editsurvey/${edit?._id}`, surveyData)
@@ -50,6 +52,18 @@ const Edit = () => {
             name="title"
             defaultValue={edit && edit?.title}
             placeholder="Title of the survey"
+            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+          />
+        </div>
+        <div className="mb-4">
+          <label className="block text-gray-600 text-sm font-medium mb-2">
+            Deadline
+          </label>
+          <input
+            type="date"
+            name="deadline"
+            defaultValue={edit && edit?.deadline}
+            placeholder="Add survey deadline"
             className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
           />
         </div>

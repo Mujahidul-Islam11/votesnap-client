@@ -11,7 +11,14 @@ const HowItWorksSection = () => {
         })
     },[])
   return (
-    <section className="py-16 bg-gray-100">
+    <section className="py-16 bg-gray-100 "
+    style={{
+      backgroundImage:
+        'url("https://i.ibb.co/d2fRNfS/Everything-You-must-Know-About-Market-Research.jpg")',
+      backgroundSize: "cover",
+      backgroundAttachment: "fixed",
+      minHeight: "100vh",
+    }}>
       <div className="container mx-auto text-center">
         <h2 className="text-3xl font-bold mb-8">How It Works</h2>
         <div className="">
@@ -20,7 +27,7 @@ const HowItWorksSection = () => {
             <div className="grid md:grid-cols-4 gap-6 mx-5" >
             {
                 Features?.map(item => <div key={item.id}>
-                <div className="card bg-base-100 shadow-xl h-[350px]">
+                <div className="card bg-base-100 text-white bg-opacity-10 shadow-xl h-[350px]">
               <figure>
                 <img
                   src={item.image}
