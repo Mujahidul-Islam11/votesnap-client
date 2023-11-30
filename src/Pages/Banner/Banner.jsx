@@ -1,7 +1,7 @@
 const Banner = () => {
   return (
     <div
-      className="hero min-h-screen"
+      className="hero min-h-screen "
       style={{
         backgroundImage:
           "url(https://i.ibb.co/HGv5JGy/Checklist-Customizable-Semi-Flat-Illustrations-Pana-Style.jpg)",
