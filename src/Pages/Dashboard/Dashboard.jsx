@@ -17,7 +17,7 @@ const Dashboard = () => {
 
   return (
     <div className="flex border text-black container mx-auto">
-      <div className="w-64 min-h-screen bg-gradient-to-b from-[#8BE8E5] via-[#8BE8E5] to-[#8BE8E5]">
+      <div className="w-64 min-h-screen bg-gradient-to-b from-gray-400 via-gray-400 to-gray-400">
         <ul className="menu">
           {userRole === "Surveyor" && (
             <>

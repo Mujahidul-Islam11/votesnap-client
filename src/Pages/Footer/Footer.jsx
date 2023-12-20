@@ -1,11 +1,11 @@
 const Footer = () => {
   return (
-    <footer className="footer footer-center text-black p-10 bg-gray-400">
+    <footer className="footer footer-center text-black p-10 bg-gray-300">
       <aside>
         <img
           src="https://i.postimg.cc/CLhjNvgJ/676-removebg-preview.png"
           alt=""
-          className="w-40 "
+          className="w-40 mb-[-60px]"
         />
         <p className="font-bold ">
           <br />

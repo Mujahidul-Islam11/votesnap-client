@@ -3,9 +3,9 @@ import { Disclosure } from '@headlessui/react';
 import { ChevronUpIcon } from '@heroicons/react/20/solid';
 
 const FAQSection = () => (
-  <div className="w-full px-4 pt-10">
-    <h3 className='text-2xl font-bold text-center mb-6'>Wanna know some answers?</h3>
-    <div className="mx-auto w-1/2 rounded-2xl bg-white p-2">
+  <div className="w-full pt-10">
+    <h3 className='text-xl  md:text-2xl font-bold text-center mb-6'>Wanna know some answers?</h3>
+    <div className="lg:mx-auto mx-4 md:w-1/2 rounded-2xl bg-white p-2">
       <Disclosure>
         {({ open }) => (
           <>

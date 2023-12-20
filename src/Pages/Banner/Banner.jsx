@@ -31,10 +31,10 @@ const Banner = () => {
       <div className="hero-content bg-black bg-opacity-50 h-full flex-col lg:flex-row-reverse">
         <img
           src="https://i.ibb.co/HGv5JGy/Checklist-Customizable-Semi-Flat-Illustrations-Pana-Style.jpg"
-          className="max-w-sm rounded-full shadow-2xl shadow-[#8BE8E5]"
+          className="md:max-w-sm rounded-full shadow-2xl shadow-[#8BE8E5]"
         />
         <div>
-          <h1 className="text-5xl font-bold">
+          <h1 className="text-2xl md:text-5xl font-bold">
             Empower Your Voice, Shape the Future!
           </h1>
           <p className="py-6">

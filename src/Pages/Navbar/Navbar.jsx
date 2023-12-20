@@ -14,7 +14,7 @@ const Navbar = () => {
   };
   const links = (
     <>
-      <li>
+      <li className="ml-2">
         <NavLink to={"/"}>
           <a>Home</a>
         </NavLink>
@@ -98,7 +98,7 @@ const Navbar = () => {
           <>
             <div className="dropdown dropdown-end">
               <div className="flex items-center gap-3">
-              <h2 className="font-bold">{user?.displayName}</h2>
+              <h2 className="font-semibold hidden md:flex">{user?.displayName}</h2>
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
                   <img
@@ -113,6 +113,7 @@ const Navbar = () => {
                 className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-white rounded-box w-52"
               >
                 <li>
+                <h2 className="font-bold block md:hidden">{user?.displayName}</h2>
                   <button onClick={handleLogOut}>Logout</button>
                 </li>
               </ul>
