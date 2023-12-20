@@ -5,14 +5,14 @@
 
 const AdminFeedTable = ({survey,index}) => {
     return (
-        <tr key={survey._id}>
+        <tr className="" key={survey._id}>
                 <th>{index + 1}</th>
                 <td>{survey.category}</td>
                 <td>{survey.title.slice(0, 25)}</td>
                 <td>{survey.status}</td>
                 <td>
                   <button
-                    className="btn"
+                    className="btn bg-[#8BE8E5] hover:text-white"
                     onClick={() =>document.getElementById('my_modal_2').showModal()
                     }
                   >

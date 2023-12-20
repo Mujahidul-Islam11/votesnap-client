@@ -17,21 +17,20 @@ const SurveyResponse = () => {
     return (
         <div>
             <PieChart yesVote={yesVote} noVote={noVote}></PieChart>
-      <h3 className="text-center mt-6 font-bold text-xl uppercase">survey responses</h3>
+      <h3 className="text-center mt-6 font-bold text-xl  uppercase">survey responses</h3>
       <div className="overflow-x-auto mx-10 mt-6">
         <table className="table">
           {/* head */}
-          <thead className="bg-blue-300">
+          <thead className="bg-blue-300 text-black">
             <tr>
               <th>#</th>
               <th>User Email</th>
               <th>User Name</th>
               <th>Category</th>
               <th>Vote</th>
-              <th></th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="bg-white">
             {votingData?.map((item, index) => (
               <tr key={item._id}>
                 <th>{index + 1}</th>

@@ -1,14 +1,17 @@
 const Footer = () => {
-   
   return (
-    <footer className="footer footer-center p-10 bg-[#E4CDFB] mt-20">
+    <footer className="footer footer-center text-black p-10 bg-gray-400">
       <aside>
-        <img src="https://i.ibb.co/wYgwzGw/Free-Photo-Clipboard-with-checklist-paper-note-icon-or-symbol-on-purple-background-3d-rendering.jpg" alt="" className="w-40 rounded-lg" />
+        <img
+          src="https://i.postimg.cc/CLhjNvgJ/676-removebg-preview.png"
+          alt=""
+          className="w-40 "
+        />
         <p className="font-bold ">
-          Yoo Survey<br />
+          <br />
           Providing reliable tech since 2023
         </p>
-        <p>Copyright © 2023 - All right reserved by YooSurvey</p>
+        <p>Copyright © 2023 - All right reserved by VoteSnap</p>
       </aside>
       <nav>
         <div className="grid grid-flow-col gap-4">

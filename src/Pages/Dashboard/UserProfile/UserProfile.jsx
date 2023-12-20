@@ -31,7 +31,7 @@ const UserProfile = () => {
           className="mx-auto w-20 h-20 rounded-full mb-2"
         />
         <h2 className="text-xl font-semibold">{user.displayName}</h2>
-        <p className="text-gray-500">{user.email}</p>
+        <p className="">{user.email}</p>
       </div>
 
       <div className="text-center">
@@ -39,20 +39,20 @@ const UserProfile = () => {
           <div>
             <form method="dialog" onSubmit={handleUpdateProfile}>
               <div className="mb-4">
-                <label className="block text-gray-600">
+                <label className="block ">
                   Name
                 </label>
                 <input
                   type="text"
                   name="name"
                   defaultValue={user.displayName}
-                  className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500"
+                  className="w-full border border-gray-300 bg-white rounded px-3 py-2 focus:outline-none focus:border-blue-500"
                 />
               </div>
 
               <div className="mb-4">
                 <label
-                  className="block text-gray-600"
+                  className="block "
                 >
                   Photo URL
                 </label>
@@ -60,7 +60,7 @@ const UserProfile = () => {
                   type="text"
                   name="photo"
                   defaultValue={user.photoURL}
-                  className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500"
+                  className="w-full border bg-white border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500"
                 />
               </div>
 

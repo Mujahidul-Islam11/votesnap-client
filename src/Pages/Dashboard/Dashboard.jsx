@@ -16,8 +16,8 @@ const Dashboard = () => {
   let [userRole] = UseAdmin();
 
   return (
-    <div className="flex border container mx-auto">
-      <div className="w-64 min-h-screen bg-gradient-to-b from-[#E4CDFB] via-[#E4CDFB] to-[#D1BDF6]">
+    <div className="flex border text-black container mx-auto">
+      <div className="w-64 min-h-screen bg-gradient-to-b from-[#8BE8E5] via-[#8BE8E5] to-[#8BE8E5]">
         <ul className="menu">
           {userRole === "Surveyor" && (
             <>
@@ -31,6 +31,12 @@ const Dashboard = () => {
                 <NavLink to={"/dashboard/adminFeeback"}>
                   <FaExclamationCircle></FaExclamationCircle>
                   Admin Feedback
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to={"/dashboard/userFeedback"}>
+                  <FaExclamationCircle></FaExclamationCircle>
+                  User Feedback
                 </NavLink>
               </li>
               <li>

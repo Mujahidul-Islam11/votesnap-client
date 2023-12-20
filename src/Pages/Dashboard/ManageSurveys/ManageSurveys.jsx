@@ -22,10 +22,10 @@ const ManageSurveys = () => {
   });
 console.log(surveysData)
   return (
-    <div className="grid md:grid-cols-4 gap-6 mx-10">
+    <div className="grid md:grid-cols-4 gap-6 mx-10 py-6">
       {
-        surveysData?.map(item=> <div key={item._id} className="card px-4 py-2 card-compact bg-base-100 shadow-xl">
-        <div className="card-body">
+        surveysData?.map(item=> <div key={item._id} className="bg-white card px-4 py-2 card-compact  shadow-xl">
+        <div className="card-body ">
           <h2 className="card-title">{item.title}</h2>
           <p className="underline">Published Date : {item.publishedDate}</p>
           <p className="font-bold">Category : {item.category}</p>

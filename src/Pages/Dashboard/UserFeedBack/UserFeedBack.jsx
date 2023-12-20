@@ -16,11 +16,11 @@ const UserFeedBack = () => {
 
     return (
       <div>
-        <h3 className="text-center mt-6 font-bold text-xl">See The FeedBacks</h3>
+        <h3 className="text-center mt-6 font-bold  text-xl">See The FeedBacks</h3>
         <div className="overflow-x-auto mx-10 mt-6">
           <table className="table">
             {/* head */}
-            <thead className="bg-blue-300">
+            <thead className="bg-blue-300 text-black">
               <tr>
                 <th>#</th>
                 <th>Category</th>
@@ -29,7 +29,7 @@ const UserFeedBack = () => {
                 <th></th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="bg-white">
               {reported?.map((survey, index) => (
                 <tr key={survey._id}>
                   <th>{index + 1}</th>
@@ -38,15 +38,15 @@ const UserFeedBack = () => {
                   <td>{survey.status}</td>
                   <td>
                     <button
-                      className="btn"
+                      className="btn btn-primary bg-[#8BE8E5] hover:text-white"
                       onClick={() =>
                         document.getElementById("my_modal_2").showModal()
                       }
                     >
                       FeedBack
                     </button>
-                    <dialog id="my_modal_2" className="modal">
-                      <div className="modal-box">
+                    <dialog id="my_modal_2" className="modal ">
+                      <div className="modal-box bg-white">
                         <p className="py-4">
                           {survey.report}
                         </p>

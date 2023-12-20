@@ -15,9 +15,9 @@ const PieChart = ({ yesVote, noVote }) => {
   };
 
   return (
-    <div className='mx-auto flex justify-center my-6'>
+    <div className='mx-auto flex  justify-center my-6'>
       <div>
-      <h2 className="text-center text-xl font-bold mb-4">Voting Chart</h2>
+      <h2 className="text-center text-xl font-bold  mb-4">Voting Chart</h2>
       <Chart
         options={chartData.options}
         series={chartData.series}

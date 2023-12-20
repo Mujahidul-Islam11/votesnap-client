@@ -41,7 +41,7 @@ const SurveyManagment = () => {
       <div className="overflow-x-auto mx-10 mt-6">
         <table className="table">
           {/* head */}
-          <thead className="bg-blue-300">
+          <thead className="bg-blue-300 text-black">
             <tr>
               <th>#</th>
               <th>Surveyor Email</th>
@@ -51,7 +51,7 @@ const SurveyManagment = () => {
               <th></th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="bg-white">
             {surveys?.map((survey, index) => (
               <tr key={survey._id}>
                 <th>{index + 1}</th>

@@ -17,4 +17,4 @@ const UseAdmin = () => {
 };
 
 export default UseAdmin;
-// http://localhost:5000/users/admin/web.dev.dinar@gmail.com
+// https://yoo-survey-server.vercel.app/users/admin/web.dev.dinar@gmail.com

@@ -29,6 +29,7 @@ import PaymentHistory from "./Pages/Dashboard/PaymentHistory/PaymentHistory.jsx"
 import AboutUs from "./Pages/AboutUs/AboutUs.jsx";
 import SurveyResponse from "./Pages/Dashboard/SurveyResponse/SurveyResponse.jsx";
 import Analytics from "./Pages/Dashboard/Analytics/Analytics.jsx";
+import UserFeedBack from "./Pages/Dashboard/UserFeedBack/UserFeedBack.jsx";
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
@@ -104,6 +105,10 @@ const router = createBrowserRouter([
       {
         path: "manageSurveys",
         element: <SurveyorPrivateRoute><ManageSurveys></ManageSurveys></SurveyorPrivateRoute>,
+      },
+      {
+        path: "userFeedback",
+        element: <SurveyorPrivateRoute><UserFeedBack></UserFeedBack></SurveyorPrivateRoute>,
       },
       {
         path: "adminFeeback",

@@ -24,6 +24,7 @@ const SurveyDetails = () => {
   const [userRole] = UseAdmin();
   const { id } = useParams();
   const newDate = moment().format("YYYY-MM-DD");
+  console.log(newDate)
 
   const axiosPublic = AxiosOpen();
   const { data, refetch } = useQuery({
@@ -197,8 +198,8 @@ const SurveyDetails = () => {
     });
   };
   return (
-    <div className="md:flex">
-      <div className="card card-compact bg-base-100 md:p-6 md:mx-20  shadow-xl">
+    <div className="md:flex my-10">
+      <div className="card card-compact bg-white text-black md:p-6 md:mx-20  shadow-xl">
         <div className="card-body">
           <h2 className="text-2xl">{data?.title}</h2>
           <p>Published Date : {data?.publishedDate}</p>
@@ -214,12 +215,12 @@ const SurveyDetails = () => {
             <div className="flex gap-6 my-4 items-center">
               <button
                 disabled={
-                  newDate > data?.deadline ||
+                  newDate >= data?.deadline ||
                   userRole === "Admin" ||
                   userRole === "Surveyor"
                 }
                 onClick={() => handleYesVote(data)}
-                className="btn"
+                className="btn bg-white text-black"
               >
                 Yes {data?.yesVoted}
               </button>
@@ -230,7 +231,7 @@ const SurveyDetails = () => {
                   userRole === "Surveyor"
                 }
                 onClick={() => handleNoVote(data)}
-                className="btn"
+                className="btn bg-white text-black"
               >
                 No {data?.noVoted}
               </button>
@@ -251,8 +252,9 @@ const SurveyDetails = () => {
                 <div className="flex gap-4">
                   <div>
                     <button
+                    
                       onClick={() => handleLike(data)}
-                      className="btn btn-like "
+                      className="btn bg-white text-black"
                     >
                       <FaThumbsUp />
                       <p>{data?.likeCount}</p>
@@ -262,7 +264,7 @@ const SurveyDetails = () => {
                   <div>
                     <button
                       onClick={() => handleDisLike(data)}
-                      className="btn btn-dislike"
+                      className="btn bg-white text-black"
                     >
                       <FaThumbsDown />
                       <p>{data?.dislikeCount}</p>
@@ -274,7 +276,7 @@ const SurveyDetails = () => {
 
                 <div className="tooltip" data-tip="Comment">
                   <button
-                    className="btn ml-4"
+                    className="btn ml-4 bg-white text-black"
                     onClick={() =>
                       document.getElementById("my_modal_3").showModal()
                     }
@@ -283,7 +285,7 @@ const SurveyDetails = () => {
                   </button>
 
                   <dialog id="my_modal_3" className="modal">
-                    <div className="modal-box">
+                    <div className="modal-box bg-white">
                       <form method="dialog">
                         {/* if there is a button in form, it will close the modal */}
                         <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
@@ -340,7 +342,7 @@ const SurveyDetails = () => {
           </div>
           <NavLink to={"/surveys"}>
             <div className="card-actions justify-end">
-              <button className="btn btn-primary">Go Back</button>
+              <button className="btn btn-primary bg-[#8BE8E5] hover:text-white">Go Back</button>
             </div>
           </NavLink>
         </div>

@@ -27,7 +27,7 @@ const UserManagment = () => {
     <div className="overflow-x-auto mx-10 mt-6">
       <table className="table">
         {/* head */}
-        <thead className="bg-blue-300">
+        <thead className="bg-blue-300 text-black">
           <tr>
             <th>#</th>
             <th>User Names</th>
@@ -36,7 +36,7 @@ const UserManagment = () => {
             <th>Registration Dates</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="bg-white">
           {/* row 1 */}
           {users?.map((user, index) => (
             <tr key={user._id}>

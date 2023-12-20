@@ -3,7 +3,7 @@ import Chart from 'react-apexcharts';
 
 const SurveyorPieChart = ({ yesVote, noVote, likeVote, dislikeVote }) => {
   const chartData = {
-    series: [yesVote.length, noVote.length, likeVote.length, dislikeVote.length],
+    series: [yesVote, noVote, likeVote, dislikeVote],
     options: {
       labels: ['Yes', 'No', 'Like', 'Dislike'],
       colors: ['#4CAF50', '#FF5252', '#2196F3', '#FFC107'], // You can adjust colors as needed

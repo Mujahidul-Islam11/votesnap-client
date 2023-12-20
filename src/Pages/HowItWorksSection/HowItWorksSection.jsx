@@ -1,7 +1,11 @@
-import  { useEffect,  useState } from "react";
+import  { useContext, useEffect,  useState } from "react";
+import { NavLink } from "react-router-dom";
+import { AuthConext } from "../../AuthProvider/AuthProvider";
 
 
 const HowItWorksSection = () => {
+  // eslint-disable-next-line no-unused-vars
+  const {user} = useContext(AuthConext)
     const [Features, setFeatures] = useState()
     useEffect(()=>{
         fetch('Features.json')
@@ -20,14 +24,14 @@ const HowItWorksSection = () => {
       minHeight: "100vh",
     }}>
       <div className="container mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-8">How It Works</h2>
+        <h2 className="text-3xl font-bold mb-8 text-white">How It Works</h2>
         <div className="">
           <div>
             {/* Add an icon or illustration */}
             <div className="grid md:grid-cols-4 gap-6 mx-5" >
             {
                 Features?.map(item => <div key={item.id}>
-                <div className="card bg-base-100 text-white bg-opacity-10 shadow-xl h-[350px]">
+                <div className="card bg-black text-white bg-opacity-40 shadow-xl h-[350px]">
               <figure>
                 <img
                   src={item.image}
@@ -45,9 +49,11 @@ const HowItWorksSection = () => {
             </div>
           </div>
         </div>
+        <NavLink to={'/Login'}>
         <button className="mt-8 btn bg-blue-500 text-white px-6 py-3 rounded-full">
           Get Started
         </button>
+        </NavLink>
       </div>
     </section>
   );

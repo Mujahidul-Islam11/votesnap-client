@@ -20,32 +20,32 @@ const Navbar = () => {
         </NavLink>
       </li>
       {
-        user && <li>
+        user && <li className="ml-2">
         <NavLink to={"/surveys"}>
           <a>Surveys</a>
         </NavLink>
       </li>
       }
-      <li>
+      <li className="ml-2">
         <NavLink to={"/contactUs"}>
           <a>Contact Us</a>
         </NavLink>
       </li>
-      {!user && <li>
+      {!user && <li className="ml-2">
         <NavLink to={"/aboutUs"}>
           <a>About Us</a>
         </NavLink>
       </li>}
       {
         user &&
-        <li>
+        <li className="ml-2">
         <NavLink to={"/pricing"}>
           <a>Pricing</a>
         </NavLink>
       </li>
       }
       {user &&
-        <li>
+        <li className="ml-2">
           <NavLink to={'/dashboard/profile'}>
             <a>Dashboard</a>
           </NavLink>
@@ -54,8 +54,8 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar mb-6 bg-[#E4CDFB]">
-      <div className="navbar-start">
+    <div className="navbar text-black container  mx-auto">
+      <div className="navbar-start py-2">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
             <svg
@@ -81,15 +81,12 @@ const Navbar = () => {
           </ul>
         </div>
         <NavLink to={"/"}>
-          <div className="text-xl cursor-pointer">
-            <i className="flex items-center">
+          <div className="text-xl flex items-center cursor-pointer">
               <img
-                src="https://i.ibb.co/wK5Q0Nj/Free-Photo-Clipboard-with-checklist-paper-note-icon-or-symbol-on-purple-background-3d-rendering.jpg"
+                src="https://i.postimg.cc/CLhjNvgJ/676-removebg-preview.png"
                 alt=""
-                className="w-16"
+                className="w-28 h-20"
               />{" "}
-              YooSurvey
-            </i>
           </div>
         </NavLink>
       </div>
@@ -113,7 +110,7 @@ const Navbar = () => {
               </div>
               <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-white rounded-box w-52"
               >
                 <li>
                   <button onClick={handleLogOut}>Logout</button>
@@ -123,7 +120,7 @@ const Navbar = () => {
           </>
         ) : (
           <NavLink to={"/Login"}>
-            <button className="btn">Login</button>
+            <button className="btn  hover:bg-[#8BE8E5] hover:text-white">Login</button>
           </NavLink>
         )}
       </div>

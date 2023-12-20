@@ -27,7 +27,7 @@ const SurveysCard = ({ survey, refetch }) => {
   
 
   return (
-    <div className="card bg-base-100 shadow-xl h-[]">
+    <div className="card bg-white text-black  shadow-xl h-[]">
       <div className="card-body">
         <h2 className="card-title">{survey.title}</h2>
         <p className="">Published At : {survey.publishedDate}</p>
@@ -36,7 +36,7 @@ const SurveysCard = ({ survey, refetch }) => {
           Category: {survey.category}
         </p>
         <NavLink to={`/details/${survey._id}`}>
-          <button className="btn w-full btn-primary">Details</button>
+          <button className="btn w-full btn-primary bg-[#8BE8E5] hover:text-white">Details</button>
         </NavLink>
       </div>
     </div>

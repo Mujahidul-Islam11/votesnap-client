@@ -1,10 +1,12 @@
 import axios from "axios";
 
+
 const axiosSecure = axios.create({
-    baseURL: 'http://localhost:5000'
+    baseURL: 'https://yoo-survey-server.vercel.app'
 })
 
 const AxiosSecure = () => {
+   
     return axiosSecure
 };
 

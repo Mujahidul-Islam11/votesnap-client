@@ -20,7 +20,7 @@ const PaymentHistory = () => {
       <div className="overflow-x-auto mx-10 ">
         <table className="table">
           {/* head */}
-          <thead className="bg-blue-400">
+          <thead className="bg-blue-300 text-black">
             <tr>
               <th></th>
               <th>Email</th>
@@ -30,11 +30,11 @@ const PaymentHistory = () => {
 
             </tr>
           </thead>
-          <tbody>
+          <tbody className="bg-white">
             {paymentsHistory.map((payment, index) => (
               <tr key={payment._id}>
                 <th>{index + 1}</th>
-                <th>{payment.eamil} </th>
+                <th>{payment.email} </th>
                 <td>{payment.price}</td>
                 <td>{payment.tranjectoin}</td>
                 <td>{payment.date}</td>

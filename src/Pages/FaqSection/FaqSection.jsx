@@ -10,7 +10,7 @@ const FAQSection = () => (
         {({ open }) => (
           <>
             <Disclosure.Button className="flex w-full justify-between rounded-lg bg-purple-100 px-4 py-2 text-left text-sm font-medium text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75">
-              <span className='md:text-2xl'>What is Yoo Survey's refund policy?</span>
+              <span className='md:text-2xl'>What is VoteSnap's refund policy?</span>
               <ChevronUpIcon
                 className={`${
                   open ? 'rotate-180 transform' : ''
@@ -44,7 +44,7 @@ const FAQSection = () => (
         {({ open }) => (
           <>
             <Disclosure.Button className="flex w-full justify-between rounded-lg bg-purple-100 px-4 py-2 text-left text-sm font-medium text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75">
-              <span className='md:text-2xl'>How do I contact Yoo Survey support?</span>
+              <span className='md:text-2xl'>How do I contact VoteSnap support?</span>
               <ChevronUpIcon
                 className={`${
                   open ? 'rotate-180 transform' : ''
@@ -52,7 +52,7 @@ const FAQSection = () => (
               />
             </Disclosure.Button>
             <Disclosure.Panel className="px-4 pb-2 pt-4 md:text-xl text-gray-500">
-              You can reach our support team at support@yoosurvey.com. We're here to assist you!
+              You can reach our support team at support@VoteSnap.com. We're here to assist you!
             </Disclosure.Panel>
           </>
         )}

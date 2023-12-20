@@ -12,12 +12,12 @@ const Analytics = () => {
     },
   });
 
-  const yesVote = published.filter((item) => item.yesVoted);
-  const noVote = published.filter((item) => item.noVoted);
-  const likeVote = published.filter((item) => item.likeCount);
-  const dislikeVote = published.filter((item) => item.dislikeCount);
+  const yesVote = published.reduce((total,item) => total + item.yesVoted, 0);
+  const noVote = published.reduce((total,item) => total + item.noVoted, 0);
+  const likeVote = published.reduce((total,item) => total + item.likeCount, 0);
+  const dislikeVote = published.reduce((total,item) => total + item.dislikeCount, 0);
   return (
-    <div>
+    <div className="flex justify-center md:my-36">
       <SurveyorPieChart
         yesVote={yesVote}
         noVote={noVote}

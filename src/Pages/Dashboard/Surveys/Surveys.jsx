@@ -22,7 +22,7 @@ const Surveys = () => {
   return (
     <div>
       <div
-        className="grid md:grid-cols-4 gap-6"
+        className="grid md:grid-cols-3 my-10 gap-6"
       >
         {published?.map((sur) => (
           <SurveysCard
