@@ -4,7 +4,6 @@ import AxiosSecure from "../../../Hooks/AxiosSecure/AxiosSecure";
 import { AuthConext } from "../../../AuthProvider/AuthProvider";
 import { useQuery } from "@tanstack/react-query";
 import { HiAdjustmentsVertical } from "react-icons/hi2";
-import swal from "sweetalert";
 import SurveysCard from "../SurveysCard/SurveysCard";
 
 const Surveys = () => {

@@ -29,7 +29,7 @@ const Login = () => {
 
   return (
     <div
-      className="containe mt-8 max-w-md mx-auto p-6 rounded-md shadow-md"
+      className="container mb-12 mt-8 max-w-md mx-auto p-6 rounded-md shadow-md"
       style={{ background: "#E4CDFB" }}
     >
       <form onSubmit={handleSubmit}>
