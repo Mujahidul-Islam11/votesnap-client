@@ -30,8 +30,8 @@ const Banner = () => {
     }}>
       <div className="hero-content bg-black bg-opacity-50 h-full flex-col lg:flex-row-reverse">
         <img
-          src="https://i.ibb.co/HGv5JGy/Checklist-Customizable-Semi-Flat-Illustrations-Pana-Style.jpg"
-          className="md:max-w-sm rounded-full shadow-2xl shadow-[#8BE8E5]"
+          src="https://i.ibb.co/8KBWphG/job-interview-conversation-74855-7566.jpg"
+          className="md:max-w-sm rounded-lg shadow-xl shadow-[#8BE8E5]"
         />
         <div>
           <h1 className="text-2xl md:text-5xl font-bold">

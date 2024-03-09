@@ -7,10 +7,6 @@ const Footer = () => {
           alt=""
           className="w-40 mb-[-60px]"
         />
-        <p className="font-bold ">
-          <br />
-          Providing reliable tech since 2023
-        </p>
         <p>Copyright © 2023 - All right reserved by VoteSnap</p>
       </aside>
       <nav>
