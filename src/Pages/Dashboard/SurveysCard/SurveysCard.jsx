@@ -27,7 +27,7 @@ const SurveysCard = ({ survey, refetch }) => {
   
 
   return (
-    <div className="card bg-[#eceff45c] text-black shadow-xl py-4 border">
+    <div className="card bg-[#eceff45c] text-black shadow-md md:shadow-xl py-4 border">
       <div className="card-body">
         <div className="flex justify-between">
         <span className="badge bg-[#2F71FF] text-[14px] font-extrabold text-white">{survey.category}</span>

@@ -5,6 +5,7 @@ import { AuthConext } from "../../../AuthProvider/AuthProvider";
 import { useQuery } from "@tanstack/react-query";
 import { HiAdjustmentsVertical } from "react-icons/hi2";
 import SurveysCard from "../SurveysCard/SurveysCard";
+import { Helmet } from "react-helmet";
 
 const Surveys = () => {
   const axiosSecure = AxiosSecure();
@@ -20,7 +21,12 @@ const Surveys = () => {
 
   return (
     <div>
-      <div className="grid md:grid-cols-3 my-10 gap-6">
+  <div>
+   <Helmet>
+     <title>Surveys</title>
+  </Helmet>
+ </div>
+      <div className="grid md:grid-cols-3 my-10 gap-6 px-4 md:gap-6">
         {published?.map((sur) => (
           <SurveysCard
             key={sur._id}

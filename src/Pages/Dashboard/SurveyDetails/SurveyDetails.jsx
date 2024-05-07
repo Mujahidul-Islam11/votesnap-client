@@ -18,13 +18,14 @@ import Swal from "sweetalert2";
 import UseAdmin from "../UseAdmin/UseAdmin";
 import moment from "moment/moment";
 import UserPieChart from "../../UserPieChart/UserPieChart";
+import { Helmet } from "react-helmet";
 
 const SurveyDetails = () => {
   const { user } = useContext(AuthConext);
   const [userRole] = UseAdmin();
   const { id } = useParams();
   const newDate = moment().format("YYYY-MM-DD");
-  console.log(newDate)
+  console.log(newDate);
 
   const axiosPublic = AxiosOpen();
   const { data, refetch } = useQuery({
@@ -199,6 +200,9 @@ const SurveyDetails = () => {
   };
   return (
     <div className="md:flex my-10">
+      <Helmet>
+        <title>{data?.title}</title>
+      </Helmet>
       <div className="card card-compact bg-white text-black md:p-6 md:mx-20  shadow-xl">
         <div className="card-body">
           <h2 className="text-2xl">{data?.title}</h2>
@@ -252,7 +256,6 @@ const SurveyDetails = () => {
                 <div className="flex gap-4">
                   <div>
                     <button
-                    
                       onClick={() => handleLike(data)}
                       className="btn bg-white text-black"
                     >
@@ -342,7 +345,9 @@ const SurveyDetails = () => {
           </div>
           <NavLink to={"/surveys"}>
             <div className="card-actions justify-end">
-              <button className="btn btn-primary bg-[#8BE8E5] hover:text-white">Go Back</button>
+              <button className="btn btn-primary bg-[#8BE8E5] hover:text-white">
+                Go Back
+              </button>
             </div>
           </NavLink>
         </div>

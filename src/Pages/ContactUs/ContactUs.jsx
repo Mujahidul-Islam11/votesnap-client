@@ -1,6 +1,11 @@
+import { Helmet } from "react-helmet";
+
 const ContactUs = () => {
   return (
     <div className="mx-auto">
+      <Helmet>
+     <title>Contact Us</title>
+  </Helmet>
       <div className="container mx-auto">
         <h2 className="text-3xl font-semibold text-center mb-8">Contact Us</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 ">

@@ -8,15 +8,19 @@ import {
   FaExclamationCircle,
   FaUser,
 } from "react-icons/fa";
-import { MdSettings } from 'react-icons/md';
+import { MdSettings } from "react-icons/md";
 import { NavLink, Outlet } from "react-router-dom";
 import UseAdmin from "./UseAdmin/UseAdmin";
+import { Helmet } from "react-helmet";
 
 const Dashboard = () => {
   let [userRole] = UseAdmin();
 
   return (
     <div className="flex border text-black container mx-auto">
+      <Helmet>
+        <title>Dashboard</title>
+      </Helmet>
       <div className="w-64 min-h-screen bg-gradient-to-b from-gray-400 via-gray-400 to-gray-400">
         <ul className="menu">
           {userRole === "Surveyor" && (
@@ -111,7 +115,7 @@ const Dashboard = () => {
           )}
         </ul>
         <ul className="menu">
-          {userRole === 'User' && (
+          {userRole === "User" && (
             <>
               <li>
                 <NavLink to={"/"}>
@@ -129,7 +133,7 @@ const Dashboard = () => {
           )}
         </ul>
         <ul className="menu">
-          {userRole === 'Pro User' && (
+          {userRole === "Pro User" && (
             <>
               <li>
                 <NavLink to={"/"}>
