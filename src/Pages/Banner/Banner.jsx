@@ -1,48 +1,28 @@
-import { NavLink } from "react-router-dom";
+import Lottie from "react-lottie";
+import animationData from "../../../public/survey-banner.json"
+
 
 const Banner = () => {
+  const defaultOptions = {
+    loop: true,
+    autoplay: true, 
+    animationData: animationData,
+  };
+
   return (
-    // <div
-    //   className="hero min-h-screen "
-    //   style={{
-    //     backgroundImage:
-    //       "url(https://i.ibb.co/HGv5JGy/Checklist-Customizable-Semi-Flat-Illustrations-Pana-Style.jpg)",
-    //   }}
-    // >
-    //   <div className="hero-overlay bg-opacity-70"></div>
-    //   <div className="hero-content text-center text-neutral-content">
-    //     <div className="max-w-md">
-    //       <h1 className="mb-5 text-5xl font-bold">Empower Your Voice, Shape the Future!</h1>
-    //       <p className="mb-5">
-    //       Welcome to VoteSnap, where your opinions matter. Explore a world of surveys, polls, and insights, and be part of a community that values your voice.
-    //       Explore Surveys Now
-    //       </p>
-    //       <NavLink to={'/Login'}>
-    //       <button className="btn btn-primary">Get Started</button>
-    //       </NavLink>
-    //     </div>
-    //   </div>
-    // </div>
-    <div className="hero min-h-screen text-white " style={{
-      backgroundImage:
-        'url("https://i.ibb.co/d2fRNfS/Everything-You-must-Know-About-Market-Research.jpg")',
-      backgroundSize: "cover",
-    }}>
-      <div className="hero-content bg-black bg-opacity-50 h-full flex-col lg:flex-row-reverse">
-        <img
-          src="https://i.ibb.co/8KBWphG/job-interview-conversation-74855-7566.jpg"
-          className="md:max-w-sm rounded-lg shadow-xl shadow-[#8BE8E5]"
-        />
+    <div className="hero max-w-screen-xl text-gray-900 md:py-14 xl:py-16">
+      <div className="hero-content bg-transparent h-full flex-col lg:flex-row-reverse">
+        <Lottie options={defaultOptions}></Lottie>
         <div>
-          <h1 className="text-2xl md:text-5xl font-bold">
-            Empower Your Voice, Shape the Future!
+          <h1 className="max-w-2xl text-4xl md:text-5xl xl:text-6xl font-extrabold">
+            Empower Your Voice, Shape the <span className="text-[#2F71FF]">Future!</span>
           </h1>
-          <p className="py-6">
+          <p className="py-6 md:text-lg lg:text-xl">
             Welcome to VoteSnap, where your opinions matter. Explore a world of
             surveys, polls, and insights, and be part of a community that values
             your voice. Explore Surveys Now
           </p>
-          <button className="btn btn-primary bg-[#8BE8E5]">Get Started</button>
+          <button className="btn btn-primary bg-[#2F71FF] text-white">Get Started</button>
         </div>
       </div>
     </div>
