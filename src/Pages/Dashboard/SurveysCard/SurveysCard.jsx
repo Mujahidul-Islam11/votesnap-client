@@ -27,16 +27,16 @@ const SurveysCard = ({ survey, refetch }) => {
   
 
   return (
-    <div className="card bg-white text-black  shadow-xl h-[]">
+    <div className="card bg-[#eceff45c] text-black shadow-xl py-4 border">
       <div className="card-body">
+        <div className="flex justify-between">
+        <span className="badge bg-[#2F71FF] text-[14px] font-extrabold text-white">{survey.category}</span>
+        <h2 className="inline-block text-[#2F71FF]">{survey.publishedDate}</h2>
+        </div>
         <h2 className="card-title">{survey.title}</h2>
-        <p className="">Published At : {survey.publishedDate}</p>
         <p>{survey.description}</p>
-        <p className="font-semibold border py-2 px-2 my-4">
-          Category: {survey.category}
-        </p>
         <NavLink to={`/details/${survey._id}`}>
-          <button className="btn w-full btn-primary bg-[#8BE8E5] hover:text-white">Details</button>
+          <button className="btn w-full btn-primary bg-[#2F71FF] text-white mt-6">Details</button>
         </NavLink>
       </div>
     </div>
