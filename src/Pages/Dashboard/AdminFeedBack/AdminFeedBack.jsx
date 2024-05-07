@@ -3,6 +3,7 @@ import AxiosSecure from "../../../Hooks/AxiosSecure/AxiosSecure";
 import { useContext} from "react";
 import { AuthConext } from "../../../AuthProvider/AuthProvider";
 import AdminFeedTable from "./AdminFeedTable";
+import { Helmet } from "react-helmet";
 
 const AdminFeedBack = () => {
   const axiosSecure = AxiosSecure();
@@ -18,6 +19,9 @@ const AdminFeedBack = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Dashboard || Admin Feedback</title>
+      </Helmet>
       <h3 className="text-center mt-6  font-bold text-2xl">See The FeedBacks</h3>
       <div className="overflow-x-auto mx-10 mt-6">
         <table className="table">

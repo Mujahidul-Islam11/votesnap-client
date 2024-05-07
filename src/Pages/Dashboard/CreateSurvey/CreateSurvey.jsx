@@ -3,6 +3,7 @@ import { AuthConext } from "../../../AuthProvider/AuthProvider";
 import AxiosSecure from "../../../Hooks/AxiosSecure/AxiosSecure";
 import swal from "sweetalert";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const CreateSurvey = () => {
   const { user } = useContext(AuthConext);
@@ -60,6 +61,9 @@ const CreateSurvey = () => {
 
   return (
     <div className="max-w-md mx-auto mt-8 p-6 bg-[#E4CDFB] rounded-md shadow-md">
+      <Helmet>
+        <title>Dashboard || Create Survey</title>
+      </Helmet>
       <h2 className="text-2xl font-semibold mb-4">Create Survey</h2>
       <form onSubmit={handleSubmit} className="text-black ">
         <div className="mb-4">

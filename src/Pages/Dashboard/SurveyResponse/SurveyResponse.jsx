@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import AxiosSecure from "../../../Hooks/AxiosSecure/AxiosSecure";
 import PieChart from "../../PieChart/PieChart";
+import { Helmet } from "react-helmet";
 
 
 const SurveyResponse = () => {
@@ -16,6 +17,9 @@ const SurveyResponse = () => {
     const noVote = votingData.filter(item => item.vote === 'No')
     return (
         <div>
+          <Helmet>
+        <title>Dashboard || Survey Response</title>
+      </Helmet>
             <PieChart yesVote={yesVote} noVote={noVote}></PieChart>
       <h3 className="text-center mt-6 font-bold text-xl  uppercase">survey responses</h3>
       <div className="overflow-x-auto mx-10 mt-6">

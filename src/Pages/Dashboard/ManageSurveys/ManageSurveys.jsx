@@ -7,6 +7,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { FaEdit } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const ManageSurveys = () => {
   const axiosSecure = AxiosSecure();
@@ -23,6 +24,9 @@ const ManageSurveys = () => {
 console.log(surveysData)
   return (
     <div className="grid md:grid-cols-4 gap-6 mx-10 py-6">
+      <Helmet>
+        <title>Dashboard || Manage Survey</title>
+      </Helmet>
       {
         surveysData?.map(item=> <div key={item._id} className="bg-white card px-4 py-2 card-compact  shadow-xl">
         <div className="card-body ">

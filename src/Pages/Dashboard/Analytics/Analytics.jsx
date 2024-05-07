@@ -1,10 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import AxiosSecure from "../../../Hooks/AxiosSecure/AxiosSecure";
 import SurveyorPieChart from "../SurveyorPieChart/SurveyorPieChart";
+import { Helmet } from "react-helmet";
 
 const Analytics = () => {
   const axiosSecure = AxiosSecure();
-  const { data: published = [], refetch } = useQuery({
+  const { data: published = [] } = useQuery({
     queryKey: ["published"],
     queryFn: async () => {
       const res = await axiosSecure.get(`/surveyor`);
@@ -18,6 +19,9 @@ const Analytics = () => {
   const dislikeVote = published.reduce((total,item) => total + item.dislikeCount, 0);
   return (
     <div className="flex justify-center md:my-36">
+      <Helmet>
+        <title>Dashboard || Survey Analytics</title>
+      </Helmet>
       <SurveyorPieChart
         yesVote={yesVote}
         noVote={noVote}

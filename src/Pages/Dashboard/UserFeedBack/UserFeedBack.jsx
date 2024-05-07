@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import AxiosSecure from "../../../Hooks/AxiosSecure/AxiosSecure";
+import { Helmet } from "react-helmet";
 
 const UserFeedBack = () => {
   const axiosSecure = AxiosSecure();
@@ -16,6 +17,9 @@ const UserFeedBack = () => {
 
     return (
       <div>
+        <Helmet>
+        <title>Dashboard || User Feedback</title>
+      </Helmet>
         <h3 className="text-center mt-6 font-bold  text-xl">See The FeedBacks</h3>
         <div className="overflow-x-auto mx-10 mt-6">
           <table className="table">

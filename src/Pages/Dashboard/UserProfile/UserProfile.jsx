@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import { FaUserEdit } from "react-icons/fa";
 import { AuthConext } from "../../../AuthProvider/AuthProvider";
 import swal from "sweetalert";
+import { Helmet } from "react-helmet";
 
 const UserProfile = () => {
   const { user, updateUser } = useContext(AuthConext);
@@ -24,6 +25,9 @@ const UserProfile = () => {
 
   return (
     <div className="md:max-w-md mx-auto mt-8 p-4 bg-white rounded-lg shadow-md">
+      <Helmet>
+        <title>Dashboard || {user.displayName}'s Profile</title>
+      </Helmet>
       <div className="text-center mb-4">
         <img
           src={user.photoURL}

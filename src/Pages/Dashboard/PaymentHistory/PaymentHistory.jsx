@@ -2,9 +2,9 @@
 import { useQuery } from "@tanstack/react-query";
 
 import AxiosSecure from "../../../Hooks/AxiosSecure/AxiosSecure";
+import { Helmet } from "react-helmet";
 
 const PaymentHistory = () => {
-
   const axiosSecure = AxiosSecure();
   const { data: paymentsHistory = [] } = useQuery({
     queryKey: ["paymentsHistory"],
@@ -15,6 +15,9 @@ const PaymentHistory = () => {
   });
   return (
     <div className="mt-10">
+      <Helmet>
+        <title>Dashboard || Payment History </title>
+      </Helmet>
       <h2 className="text-center text-2xl font-bold mb-6"> Payment History </h2>
 
       <div className="overflow-x-auto mx-10 ">
