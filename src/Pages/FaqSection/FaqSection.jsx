@@ -11,9 +11,9 @@ const FAQSection = () => {
     animationData: animationData,
   };
   return(
-    <div className="w-full py-10">
-    <h3 className='text-3xl  md:text-5xl font-bold text-center mb-4 md:mb-6'>FAQ<span className='text-[#2F71FF]'>!</span></h3>
-    <p className='text-xl text-center'>What is on your mind check it out</p>
+    <div className="w-full py-10 my-7 md:my-14">
+    <h3 className='text-3xl  md:text-5xl font-bold text-center mb-2 md:mb-4'>FAQ<span className='text-[#2F71FF]'>!</span></h3>
+    <p className='text-sm md:text-xl text-center text-gray-600'>What is on your mind check it out</p>
     <div className='px-4 md:flex gap-20 items-center'>
       <div className='mb-4 md:w-1/2'>
       <Lottie options={defaultOptions}></Lottie>
