@@ -12,7 +12,8 @@ const FAQSection = () => {
   };
   return(
     <div className="w-full py-10">
-    <h3 className='text-3xl  md:text-5xl font-bold text-center mb-6'>FAQ<span className='text-[#2F71FF]'>!</span></h3>
+    <h3 className='text-3xl  md:text-5xl font-bold text-center mb-4 md:mb-6'>FAQ<span className='text-[#2F71FF]'>!</span></h3>
+    <p className='text-xl text-center'>What is on your mind check it out</p>
     <div className='px-4 md:flex gap-20 items-center'>
       <div className='mb-4 md:w-1/2'>
       <Lottie options={defaultOptions}></Lottie>
