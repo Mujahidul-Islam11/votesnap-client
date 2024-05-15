@@ -1,20 +1,32 @@
 /* eslint-disable react/no-unescaped-entities */
 import { Disclosure } from '@headlessui/react';
 import { ChevronUpIcon } from '@heroicons/react/20/solid';
+import Lottie from 'react-lottie';
+import animationData from "../../../public/FAQ.json"
 
-const FAQSection = () => (
-  <div className="w-full py-10">
-    <h3 className='text-xl  md:text-2xl font-bold text-center mb-6'>FAQ</h3>
-    <div className="lg:mx-auto mx-4 md:w-1/2 rounded-2xl bg-white p-2">
+const FAQSection = () => {
+  const defaultOptions = {
+    loop: true,
+    autoplay: true, 
+    animationData: animationData,
+  };
+  return(
+    <div className="w-full py-10">
+    <h3 className='text-3xl  md:text-5xl font-bold text-center mb-6'>FAQ<span className='text-[#2F71FF]'>!</span></h3>
+    <div className='px-4 md:flex gap-20 items-center'>
+      <div className='mb-4 md:w-1/2'>
+      <Lottie options={defaultOptions}></Lottie>
+      </div>
+    <div className="md:w-1/2 rounded-2xl bg-white p-2 h-fit">
       <Disclosure>
         {({ open }) => (
           <>
-            <Disclosure.Button className="flex w-full justify-between rounded-lg bg-purple-100 px-4 py-2 text-left text-sm font-medium text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75">
+            <Disclosure.Button className="flex w-full justify-between rounded-lg bg-white px-4 py-2 text-left text-sm font-medium text-[#2F71FF] hover:bg-[#2f71ff2f] focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75">
               <span className='md:text-2xl'>What is VoteSnap's refund policy?</span>
               <ChevronUpIcon
                 className={`${
                   open ? 'rotate-180 transform' : ''
-                } h-5 w-5 text-purple-500`}
+                } h-5 w-5 text-[#2F71FF]`}
               />
             </Disclosure.Button>
             <Disclosure.Panel className="px-4 pb-2 pt-4 md:text-xl text-gray-500">
@@ -26,12 +38,12 @@ const FAQSection = () => (
       <Disclosure as="div" className="mt-2">
         {({ open }) => (
           <>
-            <Disclosure.Button className="flex w-full justify-between rounded-lg bg-purple-100 px-4 py-2 text-left text-sm font-medium text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75">
+            <Disclosure.Button className="flex w-full justify-between rounded-lg bg-white px-4 py-2 text-left text-sm font-medium text-[#2F71FF] hover:bg-[#2f71ff2f] focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75">
               <span className='md:text-2xl'>Is technical support available?</span>
               <ChevronUpIcon
                 className={`${
                   open ? 'rotate-180 transform' : ''
-                } h-5 w-5 text-purple-500`}
+                } h-5 w-5 text-[#2F71FF]`}
               />
             </Disclosure.Button>
             <Disclosure.Panel className="px-4 pb-2 pt-4 md:text-xl text-gray-500">
@@ -43,12 +55,12 @@ const FAQSection = () => (
       <Disclosure as="div" className="mt-2">
         {({ open }) => (
           <>
-            <Disclosure.Button className="flex w-full justify-between rounded-lg bg-purple-100 px-4 py-2 text-left text-sm font-medium text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75">
+            <Disclosure.Button className="flex w-full justify-between rounded-lg bg-white px-4 py-2 text-left text-sm font-medium text-[#2F71FF] hover:bg-[#2f71ff2f] focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75">
               <span className='md:text-2xl'>How do I contact VoteSnap support?</span>
               <ChevronUpIcon
                 className={`${
                   open ? 'rotate-180 transform' : ''
-                } h-5 w-5 text-purple-500`}
+                } h-5 w-5 text-[#2F71FF]`}
               />
             </Disclosure.Button>
             <Disclosure.Panel className="px-4 pb-2 pt-4 md:text-xl text-gray-500">
@@ -58,7 +70,9 @@ const FAQSection = () => (
         )}
       </Disclosure>
     </div>
+    </div>
   </div>
-);
+  )
+};
 
 export default FAQSection;
