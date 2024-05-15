@@ -35,7 +35,7 @@ const SurveysCard = ({ survey, refetch }) => {
         </div>
         <h2 className="card-title">{survey.title}</h2>
         <p>{survey.description}</p>
-        <NavLink to={`/details/${survey._id}`}>
+        <NavLink to={user ? `/details/${survey._id}`: '/login'}>
           <button className="btn w-full btn-primary bg-[#2F71FF] text-white mt-6">Details</button>
         </NavLink>
       </div>

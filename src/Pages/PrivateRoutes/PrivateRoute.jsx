@@ -8,7 +8,7 @@ const PrivateRoute = ({children}) => {
     const navigate = useNavigate()
     const {user, loading} = useContext(AuthConext)
     if(loading){
-        return <span className="loading loading-bars loading-lg"></span>
+        return <span className="loading loading-bars loading-lg text-center mx-auto items-center flex justify-center"></span>
     }
     if(user){
        return children

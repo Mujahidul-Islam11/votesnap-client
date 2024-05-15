@@ -11,7 +11,7 @@ const AdminPrivateRoute = ({ children }) => {
   const { user, loading } = useContext(AuthConext);
   if (loading || isAdminLoading) {
     return (
-      <span className="loading loading-bars loading-lg flex justify-center items-center mx-auto"></span>
+      <span className="loading loading-bars loading-lg text-center mx-auto items-center flex justify-center"></span>
     );
   }
   if (user && userRole === "Admin") {

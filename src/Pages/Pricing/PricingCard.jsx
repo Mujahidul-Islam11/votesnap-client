@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import { Helmet } from "react-helmet";
 import { NavLink } from "react-router-dom";
+import { AuthConext } from "../../AuthProvider/AuthProvider";
 
 const PricingCard = () => {
+  const {user} = useContext(AuthConext)
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg mx-auto my-8">
       <Helmet>
@@ -26,7 +29,7 @@ const PricingCard = () => {
 
       <div className="px-6 py-4">
         <NavLink
-          to="/payment"
+          to={user? "/payment" : "/login"}
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
         >
           Pay Now

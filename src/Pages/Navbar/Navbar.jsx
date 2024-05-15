@@ -19,31 +19,26 @@ const Navbar = () => {
           <a>Home</a>
         </NavLink>
       </li>
-      {
-        user && <li className="ml-2">
+     <li className="ml-2">
         <NavLink to={"/surveys"}>
           <a>Surveys</a>
         </NavLink>
       </li>
-      }
       <li className="ml-2">
         <NavLink to={"/contactUs"}>
           <a>Contact Us</a>
         </NavLink>
       </li>
-      {!user && <li className="ml-2">
+     <li className="ml-2">
         <NavLink to={"/aboutUs"}>
           <a>About Us</a>
         </NavLink>
-      </li>}
-      {
-        user &&
+      </li>
         <li className="ml-2">
         <NavLink to={"/pricing"}>
           <a>Pricing</a>
         </NavLink>
       </li>
-      }
       {user &&
         <li className="ml-2">
           <NavLink to={'/dashboard/profile'}>

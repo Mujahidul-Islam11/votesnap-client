@@ -58,7 +58,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/surveys",
-        element: <PrivateRoute><Surveys></Surveys></PrivateRoute>,
+        element: <Surveys></Surveys>,
       },
       {
         path: "/details/:id",
