@@ -205,17 +205,18 @@ const SurveyDetails = () => {
       </Helmet>
       <div className="card card-compact bg-white text-black md:p-6 md:mx-20  shadow-xl">
         <div className="card-body">
-          <h2 className="text-2xl">{data?.title}</h2>
-          <p>Published Date : {data?.publishedDate}</p>
-          <p>{data?.description}</p>
+          <p className="text-[#2F71FF]">Published Date : {data?.publishedDate}</p>
           <p className="font-bold">Category : {data?.category}</p>
+            <p className="font-bold">Deadline : {data?.deadline}</p>
+          <div className="mt-6">
+          <h2 className="text-2xl md:text-3xl font-semibold">{data?.title}</h2>
+          <p className="text-[16px] text-gray-500">{data?.description}</p>
+          </div>
           <div>
             {/* report and voting section */}
             <h3 className="flex items-center text-xl font-semibold gap-2">
-              Will You Like To Vote Us
-              <FaQuestionCircle></FaQuestionCircle>
+              Vote before the deadline is finished.
             </h3>
-            <p>Deadline : {data?.deadline}</p>
             <div className="flex gap-6 my-4 items-center">
               <button
                 disabled={
