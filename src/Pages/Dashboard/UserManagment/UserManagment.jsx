@@ -2,6 +2,7 @@ import swal from "sweetalert";
 import AllUsers from "../../../Hooks/AllUsers/AllUsers";
 import AxiosSecure from "../../../Hooks/AxiosSecure/AxiosSecure";
 import { Helmet } from "react-helmet";
+import "../../../index.css"
 
 const UserManagment = () => {
   const [users, refetch] = AllUsers();
@@ -25,7 +26,7 @@ const UserManagment = () => {
     })
 }
   return (
-    <div className="overflow-x-auto mx-10 mt-6 h-screen">
+    <div className="overflow-x-auto mx-10 mt-6 h-screen survey-response">
       <Helmet>
         <title>Dashboard || Manage User</title>
       </Helmet>

@@ -2,6 +2,7 @@ import swal from "sweetalert";
 import UseSurveyAdmin from "../../../Hooks/AdminSurveyManagement/UseSurveyAdmin";
 import AxiosSecure from "../../../Hooks/AxiosSecure/AxiosSecure";
 import { Helmet } from "react-helmet";
+import "../../../index.css"
 
 const SurveyManagment = () => {
   const [surveys, refetch] = UseSurveyAdmin();
@@ -37,7 +38,7 @@ const SurveyManagment = () => {
   };
 
   return (
-    <div className="overflow-x-auto mx-10 mt-6 h-screen">
+    <div className="overflow-x-auto mx-10 mt-6 h-screen survey-response">
       <Helmet>
         <title>Dashboard || Survey Management</title>
       </Helmet>
