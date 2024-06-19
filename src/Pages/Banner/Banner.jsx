@@ -22,7 +22,7 @@ const Banner = () => {
             surveys, polls, and insights, and be part of a community that values
             your voice. Explore Surveys Now
           </p>
-          <button className="btn btn-primary bg-[#2F71FF] text-white">Get Started</button>
+          <button className="btn btn-primary bg-[#2F71FF] text-white border-none hover:bg-[#2f71ffbf]">Get Started</button>
         </div>
       </div>
     </div>

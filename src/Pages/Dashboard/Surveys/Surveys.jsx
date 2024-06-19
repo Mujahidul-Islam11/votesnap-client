@@ -40,7 +40,7 @@ const Surveys = () => {
           ></SurveysCard>
         ))}
       </div>
-      <button onClick={()=> setSliceBtn(sliceBtn >6 ? sliceBtn - 3: sliceBtn + 3)} className="btn btn-primary bg-[#2F71FF] text-white my-2 md:my-4 mx-auto flex justify-center">{sliceBtn>6 ? "Load Less": "Load More"}</button>
+      <button onClick={()=> setSliceBtn(sliceBtn >6 ? sliceBtn - 3: sliceBtn + 3)} className="btn btn-primary bg-[#2F71FF] text-white border-none hover:bg-[#2f71ffbf] my-2 md:my-4 mx-auto flex justify-center">{sliceBtn>6 ? "Load Less": "Load More"}</button>
     </div>
   );
 };

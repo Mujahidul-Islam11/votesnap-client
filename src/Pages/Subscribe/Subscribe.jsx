@@ -9,7 +9,7 @@ const Subscribe = () => {
             </div>
             <div className='mt-6 md:mt-0 flex-col md:flex-row flex gap-6 items-center'>
                 <input placeholder='Enter email to get started' type="text" className='md:w-[400px] border-none outline-gray-200 bg-gray-800 py-3 px-6 text-white rounded-lg '/>
-                <button className='btn btn-primary'>Subscribe</button>
+                <button className='btn btn-primary bg-[#2F71FF] text-white border-none hover:bg-[#2f71ffbf]'>Subscribe</button>
             </div>
         </div>
     );
