@@ -3,7 +3,7 @@
 
 const AboutUs = () => {
   return (
-    <div className="bg-white py-16 px-10 my-7 md:my-14">
+    <div className="bg-white py-16 px-10 my-7 md:my-14 border">
       <div className="container mx-auto">
         <h2 className="text-3xl font-bold mb-8 text-gray-800">About VoteSnap</h2>
         
@@ -26,7 +26,7 @@ const AboutUs = () => {
         <div className="mt-8">
           <h3 className="text-xl font-semibold mb-4 text-gray-700">Contact Us</h3>
           <p className="text-gray-600">
-            Have questions or suggestions? Feel free to reach out to us at <span className="text-blue-500">support@yoosurvey.com</span>.
+            Have questions or suggestions? Feel free to reach out to us at <span className="text-blue-500">support@votesnap.com</span>.
           </p>
         </div>
       </div>

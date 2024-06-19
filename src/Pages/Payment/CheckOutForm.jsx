@@ -162,9 +162,9 @@ const CheckOutForm = () => {
   //  console.log("Your tranjectoin id",{tranjectoin.id});
 
   return (
-    <div className="w-1/2  mx-auto card p-5 bg-inherit">
+    <div className="md:w-1/2 mx-auto card p-5 bg-inherit my-6 md:my-12">
       <h3 className="text-center font-bold my-10 text-xl">Payment here</h3>
-      <form onSubmit={handelSubmit}>
+      <form onSubmit={handelSubmit} className="px-6 py-10 border rounded-md shadow-md">
         <CardElement
           options={{
             style: {
@@ -182,7 +182,7 @@ const CheckOutForm = () => {
           }}
         />
         <button
-          className="btn btn-sm btn-primary bg-[#8BE8E5] hover:text-white my-4"
+          className="btn btn-sm btn-primary bg-[#2F71FF] text-white text-base px-4 border-none mt-8"
           type="submit"
           disabled={!stripe || !clientSecret}
         >
