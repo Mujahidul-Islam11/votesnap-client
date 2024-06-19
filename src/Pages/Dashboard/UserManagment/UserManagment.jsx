@@ -25,7 +25,7 @@ const UserManagment = () => {
     })
 }
   return (
-    <div className="overflow-x-auto mx-10 mt-6">
+    <div className="overflow-x-auto mx-10 mt-6 h-screen">
       <Helmet>
         <title>Dashboard || Manage User</title>
       </Helmet>

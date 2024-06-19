@@ -37,12 +37,11 @@ const SurveyManagment = () => {
   };
 
   return (
-    <div>
+    <div className="overflow-x-auto mx-10 mt-6 h-screen">
       <Helmet>
         <title>Dashboard || Survey Management</title>
       </Helmet>
-      <h3 className="text-center mt-6 font-bold text-xl">Manage The Surveys</h3>
-      <div className="overflow-x-auto mx-10 mt-6">
+      <div className="">
         <table className="table">
           {/* head */}
           <thead className="bg-blue-300 text-black">
@@ -69,10 +68,10 @@ const SurveyManagment = () => {
                 <td>{survey.category}</td>
                 <td>{survey.title.slice(0, 25)}</td>
                 <td>{survey.status}</td>
-                <th>
+                <th className="flex">
                   <button
                     onClick={() => handlePublish(survey)}
-                    className="btn btn-ghost bg-blue-300 mr-3"
+                    className="btn btn-ghost bg-[#2F71FF] text-white mr-3"
                   >
                     Publish
                   </button>

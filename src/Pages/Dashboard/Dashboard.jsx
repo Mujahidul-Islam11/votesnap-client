@@ -17,139 +17,139 @@ const Dashboard = () => {
   let [userRole] = UseAdmin();
 
   return (
-    <div className="flex border text-black container mx-auto">
+    <div className="flex text-black container mx-auto">
       <Helmet>
         <title>Dashboard</title>
       </Helmet>
-      <div className="w-64 min-h-screen bg-gradient-to-b from-gray-400 via-gray-400 to-gray-400">
-        <ul className="menu">
-          {userRole === "Surveyor" && (
+      <div className="w-80 h-screen">
+      {userRole === "Surveyor" && (   <ul className="menu border-x h-screen bg-blue-300">
+          
             <>
-              <li>
+              <li className="text-lg">
                 <NavLink to={"/dashboard/createSurvey"}>
                   <FaEdit></FaEdit>
                   Create Survey
                 </NavLink>
               </li>
-              <li>
+              <li className="text-lg">
                 <NavLink to={"/dashboard/adminFeeback"}>
                   <FaExclamationCircle></FaExclamationCircle>
                   Admin Feedback
                 </NavLink>
               </li>
-              <li>
+              <li className="text-lg">
                 <NavLink to={"/dashboard/userFeedback"}>
                   <FaExclamationCircle></FaExclamationCircle>
                   User Feedback
                 </NavLink>
               </li>
-              <li>
+              <li className="text-lg">
                 <NavLink to={"/dashboard/surveyResponse"}>
                   <FaChartBar></FaChartBar>
                   Survey Response
                 </NavLink>
               </li>
-              <li>
+              <li className="text-lg">
                 <NavLink to={"/dashboard/manageSurveys"}>
                   <MdSettings></MdSettings>
                   Manage Surveys
                 </NavLink>
               </li>
               <div className="divider"></div>
-              <li>
+              <li className="text-lg">
                 <NavLink to={"/dashboard/profile"}>
                   <FaUser></FaUser>
                   Profile
                 </NavLink>
               </li>
-              <li>
+              <li className="text-lg">
                 <NavLink to={"/"}>
                   <FaHome></FaHome>
                   Home
                 </NavLink>
               </li>
             </>
-          )}
-        </ul>
-        <ul className="menu">
-          {userRole === "Admin" && (
+          
+        </ul>)}
+        {userRole === "Admin" && ( <ul className="menu border-x h-screen bg-blue-300">
+          
             <>
-              <li>
+              <li className="text-lg">
                 <NavLink to={"/dashboard/userManagement"}>
                   <FaUserCircle></FaUserCircle>
                   User Management
                 </NavLink>
               </li>
-              <li>
+              <li className="text-lg">
                 <NavLink to={"/dashboard/surveyManagement"}>
                   <FaListUl></FaListUl>
                   Survey Management
                 </NavLink>
               </li>
-              <li>
+              <li className="text-lg">
                 <NavLink to={"/dashboard/paymentOverview"}>
                   <FaMoneyBill></FaMoneyBill>
                   Payment Overview
                 </NavLink>
               </li>
-              <li>
+              <li className="text-lg">
                 <NavLink to={"/dashboard/analytics"}>
                   <FaChartBar></FaChartBar>
                   Analytics
                 </NavLink>
               </li>
               <div className="divider"></div>
-              <li>
+              <li className="text-lg">
                 <NavLink to={"/"}>
                   <FaHome></FaHome>
-                  Home
+                  Home 
                 </NavLink>
               </li>
-              <li>
+              <li className="text-lg">
                 <NavLink to={"/dashboard/profile"}>
                   <FaUser></FaUser>
                   Profile
                 </NavLink>
               </li>
             </>
-          )}
         </ul>
-        <ul className="menu">
+          )}
           {userRole === "User" && (
+        <ul className="menu border-x h-screen bg-blue-300">
             <>
-              <li>
+              <li className="text-lg">
                 <NavLink to={"/"}>
                   <FaHome></FaHome>
                   Home
                 </NavLink>
               </li>
-              <li>
+              <li className="text-lg">
                 <NavLink to={"/dashboard/profile"}>
                   <FaUser></FaUser>
                   Profile
                 </NavLink>
               </li>
             </>
-          )}
         </ul>
-        <ul className="menu">
+          )}
           {userRole === "Pro User" && (
+        <ul className="menu border-x h-screen bg-blue-300">
             <>
-              <li>
+              <li className="text-lg">
                 <NavLink to={"/"}>
                   <FaHome></FaHome>
                   Home
                 </NavLink>
               </li>
-              <li>
+              <li className="text-lg">
                 <NavLink to={"/dashboard/profile"}>
                   <FaUser></FaUser>
                   Profile
                 </NavLink>
               </li>
             </>
-          )}
         </ul>
+          )}
       </div>
       <div className="w-full">
         <Outlet></Outlet>
