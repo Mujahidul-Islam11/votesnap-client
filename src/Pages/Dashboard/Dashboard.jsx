@@ -27,7 +27,7 @@ const Dashboard = () => {
       <button onClick={() => setDrawer(!drawer)} className="text-white text-xl mt-1"><ion-icon name="menu-outline"></ion-icon></button> Dashboard
       </header>
       {drawer && <div className="absolute z-50 block lg:hidden md:w-60 shadow-lg h-screen">
-      {userRole === "Surveyor" && (   <ul onClick={()=> setDrawer(false)} className="menu border-x h-screen bg-blue-300">
+      {userRole === "Surveyor" && (   <ul onClick={()=> setDrawer(false)} className="menu border-x h-screen bg-blue-400 text-white">
           
             <>
               <li className="text-lg">
@@ -76,7 +76,7 @@ const Dashboard = () => {
             </>
           
         </ul>)}
-        {userRole === "Admin" && ( <ul onClick={()=> setDrawer(false)} className="menu border-x h-screen bg-blue-300">
+        {userRole === "Admin" && ( <ul onClick={()=> setDrawer(false)} className="menu border-x h-screen bg-blue-400 text-white">
           
             <>
               <li className="text-lg">
@@ -120,7 +120,7 @@ const Dashboard = () => {
         </ul>
           )}
           {userRole === "User" && (
-        <ul onClick={()=> setDrawer(false)} className="menu border-x h-screen bg-blue-300">
+        <ul onClick={()=> setDrawer(false)} className="menu border-x h-screen bg-blue-400 text-white">
             <>
               <li className="text-lg">
                 <NavLink to={"/"}>
@@ -138,7 +138,7 @@ const Dashboard = () => {
         </ul>
           )}
           {userRole === "Pro User" && (
-        <ul onClick={()=> setDrawer(false)} className="menu border-x h-screen bg-blue-300">
+        <ul onClick={()=> setDrawer(false)} className="menu border-x h-screen bg-blue-400 text-white">
             <>
               <li className="text-lg">
                 <NavLink to={"/"}>
@@ -157,7 +157,7 @@ const Dashboard = () => {
           )}
       </div>}
       <div className="hidden lg:block w-80 h-screen">
-      {userRole === "Surveyor" && (   <ul className="menu border-x h-screen bg-blue-300">
+      {userRole === "Surveyor" && (   <ul className="menu border-x h-screen bg-blue-400 text-white">
           
             <>
               <li className="text-lg">
@@ -206,7 +206,7 @@ const Dashboard = () => {
             </>
           
         </ul>)}
-        {userRole === "Admin" && ( <ul className="menu border-x h-screen bg-blue-300">
+        {userRole === "Admin" && ( <ul className="menu border-x h-screen bg-blue-400 text-white">
           
             <>
               <li className="text-lg">
@@ -250,7 +250,7 @@ const Dashboard = () => {
         </ul>
           )}
           {userRole === "User" && (
-        <ul className="menu border-x h-screen bg-blue-300">
+        <ul className="menu border-x h-screen bg-blue-400 text-white">
             <>
               <li className="text-lg">
                 <NavLink to={"/"}>
@@ -268,7 +268,7 @@ const Dashboard = () => {
         </ul>
           )}
           {userRole === "Pro User" && (
-        <ul className="menu border-x h-screen bg-blue-300">
+        <ul className="menu border-x h-screen bg-blue-400 text-white">
             <>
               <li className="text-lg">
                 <NavLink to={"/"}>
