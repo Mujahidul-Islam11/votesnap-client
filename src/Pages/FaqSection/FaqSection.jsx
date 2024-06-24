@@ -18,7 +18,7 @@ const FAQSection = () => {
       <div className='mb-4 md:w-1/2'>
       <Lottie options={defaultOptions}></Lottie>
       </div>
-    <div className="md:w-1/2 rounded-2xl bg-white p-2 h-fit">
+    <div className="md:w-1/2 rounded-2xl bg-white p-2 h-fit border">
       <Disclosure>
         {({ open }) => (
           <>
