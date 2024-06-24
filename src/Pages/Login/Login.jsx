@@ -29,11 +29,10 @@ const Login = () => {
 
   return (
     <div
-      className="container mb-12 mt-8 max-w-md mx-auto p-6 rounded-md shadow-md"
-      style={{ background: "#E4CDFB" }}
+      className="container my-8 max-w-md mx-auto p-6 rounded-md shadow-md border"
     >
       <form onSubmit={handleSubmit}>
-        <h2 className="text-2xl font-semibold mb-4 border-b-2 border-white w-32 rounded-r-lg">Login</h2>
+        <h2 className="text-2xl font-semibold mb-4 text-center">Please Login!</h2>
         <div className="mb-4">
           <label className="block text-gray-600 text-sm font-medium mb-2">
             Email

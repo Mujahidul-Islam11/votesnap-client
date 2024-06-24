@@ -56,15 +56,14 @@ const SignUp = () => {
 
   return (
     <div
-      className="containe mt-8 max-w-md mx-auto p-6 rounded-md shadow-md"
-      style={{ background: "#E4CDFB" }}
+      className="container my-8 max-w-md mx-auto p-6 rounded-md shadow-md border"
     >
       <form onSubmit={handleSubmit}>
-        <h2 className="text-2xl font-semibold mb-4 border-b-2 border-white w-32 rounded-r-lg">
-          Register
+        <h2 className="text-2xl font-semibold mb-4 text-center">
+          Please Register!
         </h2>
         <div className="mb-4">
-          <label className="block text-gray-600 text-sm font-medium mb-2">
+          <label className="block text-gray-900 text-sm font-medium mb-2">
             Name
           </label>
           <input
@@ -76,7 +75,7 @@ const SignUp = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-600 text-sm font-medium mb-2">
+          <label className="block text-gray-900 text-sm font-medium mb-2">
             Photo Url
           </label>
           <input
@@ -88,7 +87,7 @@ const SignUp = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-600 text-sm font-medium mb-2">
+          <label className="block text-gray-900 text-sm font-medium mb-2">
             Email
           </label>
           <input
@@ -100,7 +99,7 @@ const SignUp = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-600 text-sm font-medium mb-2">
+          <label className="block text-gray-900 text-sm font-medium mb-2">
             Password
           </label>
           <input
@@ -118,8 +117,9 @@ const SignUp = () => {
           Register
         </button>
       </form>
+      <div className="divider"></div>
       <GoogleSignIn></GoogleSignIn>
-      <h3 className="text-xl text-center">
+      <h3 className="text-base text-center">
         Have an account? please{" "}
         <NavLink
           to={"/Login"}

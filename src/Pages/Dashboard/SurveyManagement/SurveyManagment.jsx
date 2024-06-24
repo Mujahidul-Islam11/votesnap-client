@@ -38,7 +38,7 @@ const SurveyManagment = () => {
   };
 
   return (
-    <div className="overflow-x-auto mx-10 mt-6 h-screen survey-response">
+    <div className="overflow-x-auto mx-3 lg:mx-10 mt-6 h-screen survey-response">
       <Helmet>
         <title>Dashboard || Survey Management</title>
       </Helmet>
@@ -62,13 +62,13 @@ const SurveyManagment = () => {
                 <td>
                   <div className="flex items-center gap-3">
                     <div>
-                      <div className="font-semibold">{survey.email}</div>
+                      <div className="">{survey.email}</div>
                     </div>
                   </div>
                 </td>
                 <td>{survey.category}</td>
                 <td>{survey.title.slice(0, 25)}</td>
-                <td>{survey.status}</td>
+                <td><h3 className={`text-center text-white p-2 ${survey.status === "Published"? 'bg-green-500': 'bg-red-500'}`}>{survey.status}</h3></td>
                 <th className="flex">
                   <button
                     onClick={() => handlePublish(survey)}
@@ -78,7 +78,7 @@ const SurveyManagment = () => {
                   </button>
                   <button
                     onClick={() => handleUnPublish(survey)}
-                    className="btn btn-ghost bg-red-300"
+                    className="btn btn-ghost bg-red-500 text-white"
                   >
                     UnPublish
                   </button>
