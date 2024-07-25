@@ -13,3 +13,7 @@ body{
 .survey-response::-webkit-scrollbar {
     display: none; 
   }
+
+.newsLetterInput {
+        caret-color: #2F71FF;
+}
