@@ -80,7 +80,7 @@ const Navbar = () => {
               <img
                 src="https://i.postimg.cc/CLhjNvgJ/676-removebg-preview.png"
                 alt=""
-                className="w-28 h-20"
+                className="w-28 h-[65px] md:h-20"
               />{" "}
           </div>
         </NavLink>
