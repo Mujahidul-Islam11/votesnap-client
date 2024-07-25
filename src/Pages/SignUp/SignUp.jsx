@@ -56,7 +56,7 @@ const SignUp = () => {
 
   return (
     <div
-      className=" md:container my-8 max-w-md mx-4 md:mx-auto p-6 rounded-md shadow-md border"
+      className=" md:container my-8 md:max-w-md mx-4 md:mx-auto p-6 rounded-md shadow-md border"
     >
       <form onSubmit={handleSubmit}>
         <h2 className="text-2xl font-semibold mb-4 text-center">

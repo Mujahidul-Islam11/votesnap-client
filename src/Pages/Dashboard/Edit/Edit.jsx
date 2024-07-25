@@ -40,11 +40,11 @@ const Edit = () => {
     })
   }
     return (
-        <div className="max-w-md mx-auto mt-8 p-6 bg-[#E4CDFB] rounded-md shadow-md">
-      <h2 className="text-2xl font-semibold mb-4">Update Survey</h2>
+        <div className="max-w-md mx-auto mt-8 p-6 bg-[#2F71FF] bg-opacity-40 rounded-md shadow-md">
+      <h2 className="text-xl md:text-2xl text-center font-semibold mb-6">Update your survey</h2>
       <form onSubmit={handleSubmit} className="text-black">
         <div className="mb-4">
-          <label className="block  text-sm font-medium mb-2">
+          <label className="block text-gray-600 text-sm font-medium mb-2">
             Title
           </label>
           <input
@@ -52,11 +52,12 @@ const Edit = () => {
             name="title"
             defaultValue={edit && edit?.title}
             placeholder="Title of the survey"
+            required
             className="w-full px-4 bg-white py-2 border rounded-md focus:outline-none focus:border-blue-500"
           />
         </div>
         <div className="mb-4">
-          <label className="block  text-sm font-medium mb-2">
+          <label className="block text-gray-600 text-sm font-medium mb-2">
             Deadline
           </label>
           <input
@@ -64,26 +65,29 @@ const Edit = () => {
             name="deadline"
             defaultValue={edit && edit?.deadline}
             placeholder="Add survey deadline"
+            required
             className="w-full px-4 py-2 border bg-white rounded-md focus:outline-none focus:border-blue-500"
           />
         </div>
         <div className="mb-4">
-          <label className="block  text-sm font-medium mb-2">
+          <label className="block text-gray-600 text-sm font-medium mb-2">
             Description
           </label>
           <textarea
             name="description"
             defaultValue={edit?.description}
             placeholder="Description of the survey"
+            required
             className="w-full px-4 py-2 border bg-white rounded-md focus:outline-none focus:border-blue-500"
           ></textarea>
         </div>
         <div className="mb-4">
-          <label className="block  text-sm font-medium mb-2">
+          <label className="block text-gray-600 text-sm font-medium mb-2">
             Category
           </label>
           <select
             name="category"
+            required
             className="select bg-white select-bordered w-full max-w-xs"
           >
             <option selected>Technology</option>

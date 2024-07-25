@@ -74,6 +74,7 @@ const CreateSurvey = () => {
             type="text"
             name="title"
             placeholder="Title of the survey"
+            required
             className="w-full px-4 py-2 bg-white border rounded-md focus:outline-none focus:border-blue-500"
           />
         </div>
@@ -84,7 +85,7 @@ const CreateSurvey = () => {
           <input
             type="date"
             name="deadline"
-            placeholder="Add survey deadline"
+            required
             className="w-full px-4 py-2 border bg-white rounded-md focus:outline-none focus:border-blue-500"
           />
         </div>
@@ -95,6 +96,7 @@ const CreateSurvey = () => {
           <textarea
             name="description"
             placeholder="Description of the survey"
+            required
             className="w-full px-4 py-2 bg-white border rounded-md focus:outline-none focus:border-blue-500"
           ></textarea>
         </div>
@@ -104,6 +106,7 @@ const CreateSurvey = () => {
           </label>
           <select
             name="category"
+            required
             className="select bg-white select-bordered w-full max-w-xs"
           >
             <option selected>Technology</option>
@@ -119,7 +122,7 @@ const CreateSurvey = () => {
           type="submit"
           className="w-full bg-blue-500 text-white p-3 rounded-md hover:bg-blue-600 focus:outline-none"
         >
-          Create Survey
+          Post Survey
         </button>
       </form>
     </div>
