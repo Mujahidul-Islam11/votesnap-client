@@ -182,7 +182,7 @@ const CheckOutForm = () => {
           }}
         />
         <button
-          className="btn btn-sm btn-primary bg-[#2F71FF] text-white text-base px-4 border-none mt-8"
+          className="btn btn-sm btn-primary bg-[#2F71FF] hover:bg-[#2F71FF] text-white text-base px-4 border-none mt-8"
           type="submit"
           disabled={!stripe || !clientSecret}
         >

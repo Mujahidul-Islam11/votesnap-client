@@ -3,6 +3,15 @@
 
 const AboutUs = () => {
   return (
+    <div>
+      <header>
+          <h3 className="text-3xl  md:text-5xl font-bold text-center mb-2 md:mb-4">
+            About <span className="text-[#2F71FF]">Us!</span>
+          </h3>
+          <p className="text-sm md:text-xl text-center text-gray-600">
+            Learn about our platform
+          </p>
+        </header>
     <div className="bg-white py-16 px-10 my-7 md:my-14 border">
       <div className="container mx-auto">
         <h2 className="text-3xl font-bold mb-8 text-gray-800">About VoteSnap</h2>
@@ -30,6 +39,7 @@ const AboutUs = () => {
           </p>
         </div>
       </div>
+    </div>
     </div>
   );
 };
