@@ -6,7 +6,7 @@ import AxiosSecure from "../../Hooks/AxiosSecure/AxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 import SurveysCard from "../Dashboard/SurveysCard/SurveysCard";
 import { NavLink } from "react-router-dom";
-import Subscribe from "../Subscribe/Subscribe";
+import NewsLetter from "../Subscribe/NewsLetter";
 
 const Home = () => {
   const axiosSecure = AxiosSecure();
@@ -22,7 +22,7 @@ const Home = () => {
   return (
     <div className="">
       <Helmet>
-        <title>VoteSnap</title>
+        <title>Vote snap | Online survey platform</title>
       </Helmet>
       <Banner></Banner>
       <div className="my-7 md:my-14">
@@ -46,7 +46,7 @@ const Home = () => {
         </NavLink>
       </div>
       <FAQSection></FAQSection>
-      <Subscribe></Subscribe>
+      <NewsLetter></NewsLetter>
     </div>
   );
 };
