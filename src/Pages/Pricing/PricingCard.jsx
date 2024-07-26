@@ -18,7 +18,7 @@ const PricingCard = () => {
           Explore latest features, be a pro user
         </p>
       </header>
-      <div className="max-w-sm rounded overflow-hidden shadow-lg mx-auto my-8">
+      <div className="max-w-sm rounded overflow-hidden shadow-lg mx-auto my-7 md:my-14">
         <div className="px-6 py-4">
           <div className="font-bold text-xl mb-2">Pro User Membership</div>
           <p className="text-gray-700 text-base">
