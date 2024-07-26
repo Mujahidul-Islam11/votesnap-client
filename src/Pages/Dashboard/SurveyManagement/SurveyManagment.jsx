@@ -45,7 +45,7 @@ const SurveyManagment = () => {
       <div className="">
         <table className="table">
           {/* head */}
-          <thead className="bg-blue-300 text-black">
+          <thead className="bg-gradient-to-r from-[#2f71ff77] to-[#2f71ffcb] text-black">
             <tr>
               <th>#</th>
               <th>Surveyor Email</th>

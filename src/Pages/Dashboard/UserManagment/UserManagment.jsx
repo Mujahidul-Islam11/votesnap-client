@@ -28,11 +28,11 @@ const UserManagment = () => {
   return (
     <div className="overflow-x-auto mx-10 mt-6 h-screen survey-response">
       <Helmet>
-        <title>Dashboard || Manage User</title>
+        <title>Dashboard || Manage Users</title>
       </Helmet>
       <table className="table">
         {/* head */}
-        <thead className="bg-blue-300 text-black">
+        <thead className="bg-gradient-to-r from-[#2f71ff77] to-[#2f71ffcb] text-black">
           <tr>
             <th>#</th>
             <th>User Names</th>

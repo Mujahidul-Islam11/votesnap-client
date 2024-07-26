@@ -2,30 +2,29 @@ import { useQuery } from "@tanstack/react-query";
 import AxiosSecure from "../../../Hooks/AxiosSecure/AxiosSecure";
 import PieChart from "../../PieChart/PieChart";
 import { Helmet } from "react-helmet";
-import "../../../index.css"
-
+import "../../../index.css";
 
 const SurveyResponse = () => {
-    const axiosSecure = AxiosSecure()
-    const {data: votingData=[]} = useQuery({
-        queryKey: ['voting'],
-        queryFn: async() => { 
-            const res = await axiosSecure(`/vote`)
-            return res.data
-        }
-    })
-    const yesVote = votingData.filter(item => item.vote === 'Yes')
-    const noVote = votingData.filter(item => item.vote === 'No')
-    return (
-        <div className="overflow-x-auto mx-10 mt-6 h-screen survey-response">
-          <Helmet>
+  const axiosSecure = AxiosSecure();
+  const { data: votingData = [] } = useQuery({
+    queryKey: ["voting"],
+    queryFn: async () => {
+      const res = await axiosSecure(`/vote`);
+      return res.data;
+    },
+  });
+  const yesVote = votingData.filter((item) => item.vote === "Yes");
+  const noVote = votingData.filter((item) => item.vote === "No");
+  return (
+    <div className="overflow-x-auto mx-10 mt-6 h-screen survey-response">
+      <Helmet>
         <title>Dashboard || Survey Response</title>
       </Helmet>
-      <h3 className="text-center mt-6 font-bold text-xl  uppercase">survey responses</h3>
-      <div className="">
+      <h3 className="text-center mt-6 font-bold text-xl">survey responses</h3>
+      <div className="mt-6">
         <table className="table">
           {/* head */}
-          <thead className="bg-blue-300 text-black">
+          <thead className="bg-gradient-to-r from-[#2f71ff77] to-[#2f71ffcb] text-black">
             <tr>
               <th>#</th>
               <th>User Email</th>
@@ -55,7 +54,7 @@ const SurveyResponse = () => {
       </div>
       <PieChart yesVote={yesVote} noVote={noVote}></PieChart>
     </div>
-    );
+  );
 };
 
 export default SurveyResponse;

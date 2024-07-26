@@ -12,7 +12,7 @@ const AdminFeedTable = ({survey,index}) => {
                 <td>{survey.status}</td>
                 <td>
                   <button
-                    className="btn bg-[#8BE8E5] hover:text-white"
+                    className="bg-[#2F71FF] text-white border-none hover:bg-[#2f71ffbf] py-2 md:py-3 px-4 md:px-6 rounded-lg "
                     onClick={() =>document.getElementById('my_modal_2').showModal()
                     }
                   >
