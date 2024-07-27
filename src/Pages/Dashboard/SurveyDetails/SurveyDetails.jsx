@@ -205,12 +205,16 @@ const SurveyDetails = () => {
       </Helmet>
       <div className="card card-compact bg-white text-black md:p-6 md:mx-20  shadow-xl">
         <div className="card-body">
-          <p className="text-[#2F71FF]">Published Date : {data?.publishedDate}</p>
+          <p className="text-[#2F71FF]">
+            Published Date : {data?.publishedDate}
+          </p>
           <p className="font-bold">Category : {data?.category}</p>
-            <p className="font-bold">Deadline : {data?.deadline}</p>
+          <p className="font-bold">Deadline : {data?.deadline}</p>
           <div className="mt-6">
-          <h2 className="text-2xl md:text-3xl font-semibold">{data?.title}</h2>
-          <p className="text-[16px] text-gray-500">{data?.description}</p>
+            <h2 className="text-2xl md:text-3xl font-semibold">
+              {data?.title}
+            </h2>
+            <p className="text-[16px] text-gray-500">{data?.description}</p>
           </div>
           <div>
             {/* report and voting section */}
@@ -324,7 +328,7 @@ const SurveyDetails = () => {
                         ))}
                       </div>
                       <div className="mb-4">
-                        {userRole === "Pro User" && (
+                        {userRole === "Pro User" ? (
                           <form onSubmit={handleDoneComment} className="flex">
                             <input
                               type="text"
@@ -336,6 +340,15 @@ const SurveyDetails = () => {
                               <MdSend></MdSend>
                             </button>
                           </form>
+                        ) : (
+                          <div>
+                            <p className="text-gray-600 mb-2">Buy premium membership for commenting feature.</p>
+                            <NavLink to={"/pricing"}>
+                            <button className="bg-[#2F71FF] text-white border-none hover:bg-[#2f71ffbf] py-1 md:py-2 px-4 rounded-md ">
+                              Payment
+                            </button>
+                            </NavLink>
+                          </div>
                         )}
                       </div>
                     </div>
@@ -346,8 +359,8 @@ const SurveyDetails = () => {
           </div>
           <NavLink to={"/surveys"}>
             <div className="card-actions justify-end">
-              <button className="btn btn-primary bg-[#8BE8E5] hover:text-white">
-                Go Back
+              <button className="bg-[#2F71FF] text-white border-none hover:bg-[#2f71ffbf] py-1 md:py-2 px-4 rounded-md shadow-md">
+                Go back
               </button>
             </div>
           </NavLink>
