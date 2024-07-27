@@ -40,7 +40,7 @@ const Home = () => {
           ))}
         </div>
         <NavLink to={'/surveys'}>
-          <button className="btn btn-primary bg-[#2F71FF] text-white border-none hover:bg-[#2f71ffbf] my-2 md:my-4 mx-auto flex justify-center">
+          <button className="btn btn-primary bg-[#2F71FF] text-white border-none hover:bg-[#2f71ffbf] my-2 md:my-4 mx-auto flex justify-center shadow-lg">
             Explore More
           </button>
         </NavLink>
