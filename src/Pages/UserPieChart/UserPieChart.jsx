@@ -15,13 +15,13 @@ const UserPieChart = ({ yesVote, noVote, likeVote, dislikeVote }) => {
   };
 
   return (
-    <div>
+    <div className='my-6 md:my-20'>
       <h2 className="text-center text-xl mb-4">Distribution Chart</h2>
       <Chart
         options={chartData.options}
         series={chartData.series}
         type="pie"
-        width="380"
+        width="320"
       />
     </div>
   );

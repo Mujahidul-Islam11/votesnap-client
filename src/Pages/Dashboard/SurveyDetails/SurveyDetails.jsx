@@ -199,28 +199,28 @@ const SurveyDetails = () => {
     });
   };
   return (
-    <div className="md:flex my-10">
+    <div className="md:flex gap-14 my-10">
       <Helmet>
         <title>{data?.title}</title>
       </Helmet>
-      <div className="card card-compact bg-white text-black md:p-6 md:mx-20  shadow-xl">
+      <div className="card card-compact bg-white text-black md:p-6 mx-4 md:mx-20 border md:shadow-xl">
         <div className="card-body">
           <p className="text-[#2F71FF]">
             Published Date : {data?.publishedDate}
           </p>
           <p className="font-bold">Category : {data?.category}</p>
           <p className="font-bold">Deadline : {data?.deadline}</p>
-          <div className="mt-6">
+          <div className="my-4 md:my-6">
             <h2 className="text-2xl md:text-3xl font-semibold">
               {data?.title}
             </h2>
-            <p className="text-[16px] text-gray-500">{data?.description}</p>
+            <p className="text-[16px] text-gray-900">{data?.description}</p>
           </div>
-          <div>
             {/* report and voting section */}
-            <h3 className="flex items-center text-xl font-semibold gap-2">
+          <div>
+            <p className="text-gray-600">
               Vote before the deadline is finished.
-            </h3>
+            </p>
             <div className="flex gap-6 my-4 items-center">
               <button
                 disabled={
@@ -306,20 +306,20 @@ const SurveyDetails = () => {
                       <div className="my-10">
                         {commentsId?.map((comment) => (
                           <div key={comment._id}>
-                            <div className="flex my-4 mx-4">
+                            <div className="flex my-6 md:mx-4">
                               <img
                                 src={comment.photo}
-                                className="w-[40px] rounded-full"
+                                className="w-10 h-10 rounded-full"
                                 alt=""
                               />
                               <div>
                                 <div className="flex gap-5">
-                                  <h3 className="font-bold flex ml-3 justify-start">
+                                  <h3 className="text-sm font-bold flex ml-3 justify-start">
                                     {comment.name}
                                   </h3>
-                                  <p>{comment.timestamp}</p>
+                                  <p className="text-xs md:text-sm">{comment.timestamp}</p>
                                 </div>
-                                <p className="ml-3 flex justify-start">
+                                <p className="ml-3 flex justify-start mt-2">
                                   {comment.comments}
                                 </p>
                               </div>
