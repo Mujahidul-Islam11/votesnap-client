@@ -327,7 +327,7 @@ const SurveyDetails = () => {
                           </div>
                         ))}
                       </div>
-                      <div className="mb-4">
+                      <div className="">
                         {userRole === "Pro User" ? (
                           <form onSubmit={handleDoneComment} className="flex">
                             <input
