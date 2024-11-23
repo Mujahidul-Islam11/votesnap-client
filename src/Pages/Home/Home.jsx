@@ -19,24 +19,25 @@ const Home = () => {
       return res.data;
     },
   });
+
   return (
     <div className="">
       <Helmet>
-        <title>Vote snap | Online survey platform</title>
+        <title>Vote Snap | Free Online Survey Maker</title>
       </Helmet>
-      <Banner></Banner>
+      <Banner/>
       <div className="my-7 md:my-14">
         <h3 className="text-3xl  md:text-5xl font-bold text-center mb-2 md:mb-4">
           Surveys<span className="text-[#2F71FF]">!</span>
         </h3>
         <p className="text-sm md:text-xl text-center text-gray-600">Explore the latest surveys</p>
-        <div className="grid md:grid-cols-3 my-10 gap-6 px-4 md:gap-6">
-          {published?.slice(0, 3).map((sur) => (
+        <div className="grid md:grid-cols-4 my-10 gap-6 px-4 md:gap-6">
+          {published?.slice(0, 4).map((sur) => (
             <SurveysCard
               key={sur._id}
               survey={sur}
               refetch={refetch}
-            ></SurveysCard>
+            />
           ))}
         </div>
         <NavLink to={'/surveys'}>
@@ -45,8 +46,8 @@ const Home = () => {
           </button>
         </NavLink>
       </div>
-      <FAQSection></FAQSection>
-      <NewsLetter></NewsLetter>
+      <FAQSection/>
+      <NewsLetter/>
     </div>
   );
 };
