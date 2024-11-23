@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 /* eslint-disable react/no-unescaped-entities */
 import { Helmet } from "react-helmet";
 import Banner from "../Banner/Banner";
@@ -10,7 +11,6 @@ import NewsLetter from "../Subscribe/NewsLetter";
 
 const Home = () => {
   const axiosSecure = AxiosSecure();
-  // eslint-disable-next-line no-unused-vars
 
   const { data: published = [], refetch } = useQuery({
     queryKey: ["published"],
@@ -21,7 +21,7 @@ const Home = () => {
   });
 
   return (
-    <div className="">
+    <>
       <Helmet>
         <title>Vote Snap | Free Online Survey Maker</title>
       </Helmet>
@@ -31,8 +31,8 @@ const Home = () => {
           Surveys<span className="text-[#2F71FF]">!</span>
         </h3>
         <p className="text-sm md:text-xl text-center text-gray-600">Explore the latest surveys</p>
-        <div className="grid md:grid-cols-4 my-10 gap-6 px-4 md:gap-6">
-          {published?.slice(0, 4).map((sur) => (
+        <div className="grid md:grid-cols-3 my-10 gap-6 px-4 md:gap-6">
+          {published?.slice(0, 3).map((sur) => (
             <SurveysCard
               key={sur._id}
               survey={sur}
@@ -48,7 +48,7 @@ const Home = () => {
       </div>
       <FAQSection/>
       <NewsLetter/>
-    </div>
+    </>
   );
 };
 

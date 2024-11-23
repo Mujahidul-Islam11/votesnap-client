@@ -50,7 +50,7 @@ const Navbar = () => {
   );
   return (
     <div className="navbar text-gray-900 container mx-auto">
-      <div className="navbar-start py-2">
+      <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
             <svg
@@ -78,9 +78,9 @@ const Navbar = () => {
         <NavLink to={"/"}>
           <div className="text-xl flex items-center cursor-pointer">
               <img
-                src="https://i.postimg.cc/CLhjNvgJ/676-removebg-preview.png"
+                src="https://i.postimg.cc/gjbxXcHZ/676-removebg-preview.png"
                 alt=""
-                className="w-28 h-[65px] md:h-20"
+                className="w-[160px]"
               />{" "}
           </div>
         </NavLink>
