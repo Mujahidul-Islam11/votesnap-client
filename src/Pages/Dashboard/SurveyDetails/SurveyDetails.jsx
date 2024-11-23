@@ -171,54 +171,27 @@ const SurveyDetails = () => {
     }
   };
 
-  const handleReport = (report) => {
-    Swal.fire({
-      title: "Give your feedback",
-      input: "text",
-      showCancelButton: true,
-      confirmButtonText: "Submit",
-      cancelButtonText: "Close",
-      showLoaderOnConfirm: true,
-      preConfirm: (inputValue) => {
-        axiosPublic
-          .put(`/report/${report}`, { report: inputValue })
-          .then((res) => {
-            if (res.data.modifiedCount > 0) {
-              swal("Reported Successfully");
-            }
-          });
-      },
-      allowOutsideClick: () => !Swal.isLoading(),
-      footer: `
-        <button id="close-btn">Close</button>
-      `,
-    });
-
-    document.getElementById("close-btn").addEventListener("click", () => {
-      Swal.close();
-    });
-  };
   return (
     <div className="md:flex gap-14 my-10">
       <Helmet>
         <title>{data?.title}</title>
       </Helmet>
-      <div className="card card-compact bg-white text-black md:p-6 mx-4 md:mx-20 border md:shadow-xl">
-        <div className="card-body">
+      <div className="rounded-md bg-white text-black p-6 md:py-10 md:px-14 mx-4 md:mx-20 border md:shadow-md">
+          <div className="flex justify-between">
           <p className="text-[#2F71FF]">
             Published Date : {data?.publishedDate}
           </p>
-          <p className="font-bold">Category : {data?.category}</p>
-          <p className="font-bold">Deadline : {data?.deadline}</p>
-          <div className="my-4 md:my-6">
+          <p className="text-red-500">Deadline : {data?.deadline}</p>
+          </div>
+          <div className="my-4 md:my-6 space-y-3">
             <h2 className="text-2xl md:text-3xl font-semibold">
               {data?.title}
             </h2>
             <p className="text-[16px] text-gray-900">{data?.description}</p>
+          <h3 className="font-semibold text-[16px]">Category : {data?.category}</h3>
           </div>
             {/* report and voting section */}
-          <div>
-            <p className="text-gray-600">
+            <p className="text-gray-500 capitalize font-semibold">
               Vote before the deadline is finished.
             </p>
             <div className="flex gap-6 my-4 items-center">
@@ -229,7 +202,7 @@ const SurveyDetails = () => {
                   userRole === "Surveyor"
                 }
                 onClick={() => handleYesVote(data)}
-                className="btn bg-white text-black"
+                className={`btn bg-white text-black ${newDate >= data?.deadline && "cursor-not-allowed"}`}
               >
                 Yes {data?.yesVoted}
               </button>
@@ -244,15 +217,6 @@ const SurveyDetails = () => {
               >
                 No {data?.noVoted}
               </button>
-
-              <div>
-                <button
-                  onClick={() => handleReport(data?._id)}
-                  className="rounded-full flex items-center cursor-pointer text-red-600"
-                >
-                  Report : <FaFlag></FaFlag>
-                </button>
-              </div>
             </div>
             {/* like dislike section */}
 
@@ -263,6 +227,7 @@ const SurveyDetails = () => {
                     <button
                       onClick={() => handleLike(data)}
                       className="btn bg-white text-black"
+                      title="Like"
                     >
                       <FaThumbsUp />
                       <p>{data?.likeCount}</p>
@@ -273,6 +238,7 @@ const SurveyDetails = () => {
                     <button
                       onClick={() => handleDisLike(data)}
                       className="btn bg-white text-black"
+                      title="Dislike"
                     >
                       <FaThumbsDown />
                       <p>{data?.dislikeCount}</p>
@@ -281,26 +247,26 @@ const SurveyDetails = () => {
                 </div>
 
                 {/* comment section  */}
-
-                <div className="tooltip" data-tip="Comment">
                   <button
                     className="btn ml-4 bg-white text-black"
                     onClick={() =>
                       document.getElementById("my_modal_3").showModal()
                     }
+                    title="Comments"
                   >
                     <FaComment></FaComment>
+                    {commentsData?.length}
                   </button>
 
                   <dialog id="my_modal_3" className="modal">
-                    <div className="modal-box bg-white">
+                    <div className="modal-box bg-white no-scrollbar">
                       <form method="dialog">
                         {/* if there is a button in form, it will close the modal */}
                         <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
                           ✕
                         </button>
                       </form>
-                      <h3 className="font-bold border-2 py-2 mx-16 text-lg mb-10">
+                      <h3 className="font-bold border-2 py-2 mx-16 text-lg mb-10 text-center">
                         Comments
                       </h3>
                       <div className="my-10">
@@ -327,7 +293,7 @@ const SurveyDetails = () => {
                           </div>
                         ))}
                       </div>
-                      <div className="">
+                      <div className="flex justify-center">
                         {userRole === "Pro User" ? (
                           <form onSubmit={handleDoneComment} className="flex">
                             <input
@@ -342,9 +308,9 @@ const SurveyDetails = () => {
                           </form>
                         ) : (
                           <div>
-                            <p className="text-gray-600 mb-2">Buy premium membership for commenting feature.</p>
+                            <p className="text-gray-500 font-semibold capitalize mb-3">Buy premium membership for commenting feature.</p>
                             <NavLink to={"/pricing"}>
-                            <button className="bg-[#2F71FF] text-white border-none hover:bg-[#2f71ffbf] py-1 md:py-2 px-4 rounded-md ">
+                            <button className="bg-[#2F71FF] text-white border-none hover:bg-[#2f71ffbf] py-1 md:py-2 px-4 rounded-md flex justify-center mx-auto">
                               Payment
                             </button>
                             </NavLink>
@@ -353,10 +319,11 @@ const SurveyDetails = () => {
                       </div>
                     </div>
                   </dialog>
-                </div>
+
               </div>
             </div>
-          </div>
+
+
           <NavLink to={"/surveys"}>
             <div className="card-actions justify-end">
               <button className="bg-[#2F71FF] text-white border-none hover:bg-[#2f71ffbf] py-1 md:py-2 px-4 rounded-md shadow-md">
@@ -364,7 +331,7 @@ const SurveyDetails = () => {
               </button>
             </div>
           </NavLink>
-        </div>
+
       </div>
       <div>
         <UserPieChart

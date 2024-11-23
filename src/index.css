@@ -17,3 +17,8 @@ body{
 .newsLetterInput {
         caret-color: #2F71FF;
 }
+
+
+.no-scrollbar {
+    scrollbar-width: none;
+  }
