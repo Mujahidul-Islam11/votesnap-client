@@ -11,7 +11,7 @@ const FAQSection = () => {
     animationData: animationData,
   };
   return(
-    <div className="w-full py-10 my-7 md:my-14">
+    <div className="w-full py-10 my-7 md:my-14 max-w-7xl mx-auto md:px-12">
     <h3 className='text-3xl  md:text-5xl font-bold text-center mb-2 md:mb-4'>FAQ<span className='text-[#2F71FF]'>!</span></h3>
     <p className='text-sm md:text-xl text-center text-gray-600'>What is on your mind check it out</p>
     <div className='px-4 md:flex gap-20 items-center'>
@@ -22,7 +22,7 @@ const FAQSection = () => {
       <Disclosure>
         {({ open }) => (
           <>
-            <Disclosure.Button className="flex w-full justify-between rounded-lg bg-white px-4 py-2 text-left text-sm font-medium text-[#2F71FF] hover:bg-[#2f71ff2f] focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75">
+            <Disclosure.Button className="flex w-full justify-between rounded-lg bg-white px-4 py-2 text-left text-sm font-medium">
               <span className='md:text-2xl'>What is VoteSnap's refund policy?</span>
               <ChevronUpIcon
                 className={`${
@@ -39,7 +39,7 @@ const FAQSection = () => {
       <Disclosure as="div" className="mt-2">
         {({ open }) => (
           <>
-            <Disclosure.Button className="flex w-full justify-between rounded-lg bg-white px-4 py-2 text-left text-sm font-medium text-[#2F71FF] hover:bg-[#2f71ff2f] focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75">
+            <Disclosure.Button className="flex w-full justify-between rounded-lg bg-white px-4 py-2 text-left text-sm font-medium ">
               <span className='md:text-2xl'>Is technical support available?</span>
               <ChevronUpIcon
                 className={`${
@@ -56,7 +56,7 @@ const FAQSection = () => {
       <Disclosure as="div" className="mt-2">
         {({ open }) => (
           <>
-            <Disclosure.Button className="flex w-full justify-between rounded-lg bg-white px-4 py-2 text-left text-sm font-medium text-[#2F71FF] hover:bg-[#2f71ff2f] focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75">
+            <Disclosure.Button className="flex w-full justify-between rounded-lg bg-white px-4 py-2 text-left text-sm font-medium ">
               <span className='md:text-2xl'>How do I contact VoteSnap support?</span>
               <ChevronUpIcon
                 className={`${

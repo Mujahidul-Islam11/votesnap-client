@@ -10,7 +10,7 @@ const Banner = () => {
   };
 
   return (
-    <div className="hero max-w-6xl mx-auto text-gray-900 md:py-14 xl:py-16">
+    <div className="hero max-w-7xl mx-auto md:px-12 text-gray-900 md:py-14 xl:py-16">
       <div className="hero-content bg-transparent h-full flex-col lg:flex-row-reverse">
         <Lottie options={defaultOptions}></Lottie>
         <div>

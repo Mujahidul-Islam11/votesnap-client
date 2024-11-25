@@ -26,7 +26,7 @@ const Home = () => {
         <title>Vote Snap | Free Online Survey Maker</title>
       </Helmet>
       <Banner/>
-      <div className="my-7 md:my-14">
+      <div className="my-7 md:my-14 max-w-7xl mx-auto md:px-12">
         <h3 className="text-3xl  md:text-5xl font-bold text-center mb-2 md:mb-4">
           Surveys<span className="text-[#2F71FF]">!</span>
         </h3>
