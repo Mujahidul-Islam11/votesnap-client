@@ -24,7 +24,7 @@ const Footer = () => {
         </nav>
       </footer>
      <div>
-      <h3 className="px-10 text-[16px] text-gray-600 text-center">Copyright © 2024 - All right reserved by <b>VoteSnap</b></h3>
+      <h3 className="px-10 text-[16px] text-gray-600 text-center border-t py-2">Copyright © 2024 - All right reserved by <b>VoteSnap</b></h3>
      </div>
     </div>
   );
