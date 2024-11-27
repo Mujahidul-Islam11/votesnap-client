@@ -20,7 +20,7 @@ const Banner = () => {
           <p className="py-6 md:text-lg lg:text-xl">
             Welcome to VoteSnap, where your opinions matter. Explore a world of
             surveys, polls, and insights, and be part of a community that values
-            your voice. Explore Surveys Now
+            your voice. Explore surveys now!
           </p>
           <button className="btn btn-primary bg-[#2F71FF] text-white border-none hover:bg-[#2f71ffbf]">Get Started</button>
         </div>
