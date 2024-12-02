@@ -23,7 +23,7 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Vote Snap | Free Online Survey Maker</title>
+        <title>Free Online Survey Maker | Unlimited Surveys | Vote snap</title>
       </Helmet>
       <Banner/>
       <div className="my-7 md:my-14 max-w-7xl mx-auto md:px-12">

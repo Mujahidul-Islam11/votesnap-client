@@ -50,7 +50,7 @@ const Navbar = () => {
   );
   return (
     <div className="border-b py-1 fixed w-full bg-white z-50">
-      <div className="navbar text-gray-900 max-w-7xl mx-auto md:px-12">
+      <div className="navbar text-dc max-w-7xl mx-auto md:px-12">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">

@@ -3,7 +3,7 @@ import React from 'react';
 const NewsLetter = () => {
     return (
         <div className='w-full border py-14'>
-            <div className='flex flex-col md:flex-row gap-6 md:justify-between items-center h-56 md:h-80 max-w-7xl mx-auto md:px-12'>
+            <div className='flex flex-col md:flex-row gap-6 md:justify-between items-center h-56 md:h-72 max-w-7xl mx-auto md:px-12'>
             <div className='text-center'>
                 <h3 className='text-4xl font-extralight mb-2 text-gray-600'>Sign up now</h3>
                 <p className='text-[22px] text-gray-500 font-extralight'>Free unlimited surveys, <br /> questions and responses.</p>
