@@ -2,7 +2,7 @@
 import { Disclosure } from '@headlessui/react';
 import { ChevronUpIcon } from '@heroicons/react/20/solid';
 import Lottie from 'react-lottie';
-import animationData from "../../../public/FAQ.json"
+import animationData from "../../../../public/FAQ.json"
 
 const FAQSection = () => {
   const defaultOptions = {

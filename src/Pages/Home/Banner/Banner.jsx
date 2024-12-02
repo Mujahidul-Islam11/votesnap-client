@@ -1,5 +1,5 @@
 import Lottie from "react-lottie";
-import animationData from "../../../public/survey-banner.json"
+import animationData from "../../../../public/survey-banner.json"
 
 
 const Banner = () => {
@@ -11,7 +11,7 @@ const Banner = () => {
 
   return (
     <div className="pb-6 border-b">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 bg-transparent flex flex-col lg:flex-row-reverse justify-center items-center">
+      <div className="max-w-7xl mx-auto px-6 md:px-8 bg-transparent flex flex-col lg:flex-row-reverse justify-center items-center">
         <div className="md:w-[800px]">
         <Lottie options={defaultOptions}></Lottie>
         </div>
