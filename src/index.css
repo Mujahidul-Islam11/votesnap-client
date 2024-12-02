@@ -12,6 +12,11 @@
   color: #383f50;
 }
 
+.text-sdc{
+  color: #6E7585;
+}
+
+
 .survey-response::-webkit-scrollbar {
     display: none; 
   }
