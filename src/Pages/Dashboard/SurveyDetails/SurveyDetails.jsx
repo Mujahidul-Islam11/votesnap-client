@@ -4,21 +4,17 @@ import { NavLink, useParams } from "react-router-dom";
 import AxiosSecure from "../../../Hooks/AxiosSecure/AxiosSecure";
 import {
   FaComment,
-  FaFlag,
-  FaQuestionCircle,
   FaThumbsDown,
   FaThumbsUp,
 } from "react-icons/fa";
 import { MdSend } from "react-icons/md";
 import { useContext } from "react";
 import { AuthConext } from "../../../AuthProvider/AuthProvider";
-import swal from "sweetalert";
 import AxiosOpen from "../../../Hooks/AxiosSecure/AxiosOpen";
-import Swal from "sweetalert2";
 import UseAdmin from "../UseAdmin/UseAdmin";
 import moment from "moment/moment";
-import UserPieChart from "../../UserPieChart/UserPieChart";
 import { Helmet } from "react-helmet";
+import UserPieChart from "../UserPieChart/UserPieChart";
 
 const SurveyDetails = () => {
   const { user } = useContext(AuthConext);
@@ -322,8 +318,6 @@ const SurveyDetails = () => {
 
               </div>
             </div>
-
-
           <NavLink to={"/surveys"}>
             <div className="card-actions justify-end">
               <button className="bg-[#2F71FF] text-white border-none hover:bg-[#2f71ffbf] py-1 md:py-2 px-4 rounded-md shadow-md">
@@ -333,14 +327,12 @@ const SurveyDetails = () => {
           </NavLink>
 
       </div>
-      <div>
         <UserPieChart
           yesVote={data?.yesVoted}
           noVote={data?.noVoted}
           likeVote={data?.likeCount}
           dislikeVote={data?.dislikeCount}
-        ></UserPieChart>
-      </div>
+       />
     </div>
   );
 };

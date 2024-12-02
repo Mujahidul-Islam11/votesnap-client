@@ -1,11 +1,12 @@
 /* eslint-disable no-unused-vars */
 import { useContext, useState } from "react";
-import AxiosSecure from "../../../Hooks/AxiosSecure/AxiosSecure";
-import { AuthConext } from "../../../AuthProvider/AuthProvider";
+import AxiosSecure from "../../Hooks/AxiosSecure/AxiosSecure";
+import { AuthConext } from "../../AuthProvider/AuthProvider";
 import { useQuery } from "@tanstack/react-query";
 import { HiAdjustmentsVertical } from "react-icons/hi2";
-import SurveysCard from "../SurveysCard/SurveysCard";
+import SurveysCard from "../Dashboard/SurveysCard/SurveysCard";
 import { Helmet } from "react-helmet";
+import ComponentTitle from "../../UI/ComponentTitle";
 
 const Surveys = () => {
   const [sliceBtn, setSliceBtn] = useState(6);
@@ -24,18 +25,11 @@ const Surveys = () => {
   // slice method (dynamically)
 
   return (
-    <div>
+    <div className="max-w-7xl mx-auto">
       <Helmet>
         <title>Surveys | explore surveys</title>
       </Helmet>
-      <header>
-        <h3 className="text-3xl  md:text-5xl font-bold text-center mb-2 md:mb-4">
-          Surveys<span className="text-[#2F71FF]">!</span>
-        </h3>
-        <p className="text-sm md:text-xl text-center text-gray-600">
-          Explore the latest surveys
-        </p>
-      </header>
+      <ComponentTitle title={"Surveys"} desc={"Explore unlimited surveys in vote snap"}/>
       <div className="grid md:grid-cols-3 my-10 gap-6 px-4 md:gap-6">
         {published?.slice(0, sliceBtn).map((sur) => (
           <SurveysCard

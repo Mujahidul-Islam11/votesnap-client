@@ -16,7 +16,6 @@ import SurveyManagment from "./Pages/Dashboard/SurveyManagement/SurveyManagment.
 import CreateSurvey from "./Pages/Dashboard/CreateSurvey/CreateSurvey.jsx";
 import ManageSurveys from "./Pages/Dashboard/ManageSurveys/ManageSurveys.jsx";
 import AdminFeedBack from "./Pages/Dashboard/AdminFeedBack/AdminFeedBack.jsx";
-import Surveys from "./Pages/Dashboard/Surveys/Surveys.jsx";
 import SurveyDetails from "./Pages/Dashboard/SurveyDetails/SurveyDetails.jsx";
 import PrivateRoute from "./Pages/PrivateRoutes/PrivateRoute.jsx"
 import AdminPrivateRoute from "./Pages/PrivateRoutes/AdminPrivateRoute.jsx";
@@ -30,47 +29,48 @@ import AboutUs from "./Pages/AboutUs/AboutUs.jsx";
 import SurveyResponse from "./Pages/Dashboard/SurveyResponse/SurveyResponse.jsx";
 import Analytics from "./Pages/Dashboard/Analytics/Analytics.jsx";
 import UserFeedBack from "./Pages/Dashboard/UserFeedBack/UserFeedBack.jsx";
+import Surveys from "./Pages/Surveys/Surveys.jsx";
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root></Root>,
+    element: <Root/>,
     children: [
       {
         path: "/",
-        element: <Home></Home>,
+        element: <Home/>,
       },
       {
         path: "/SignUp",
-        element: <SignUp></SignUp>,
+        element: <SignUp/>,
       },
       {
         path: "/Login",
-        element: <Login></Login>,
+        element: <Login/>,
       },
       {
         path: "/contactUs",
-        element: <ContactUs></ContactUs>,
+        element: <ContactUs/>,
       },
       {
         path: "/aboutUs",
-        element: <AboutUs></AboutUs>,
+        element: <AboutUs/>,
       },
       {
         path: "/surveys",
-        element: <Surveys></Surveys>,
+        element: <Surveys/>,
       },
       {
         path: "/details/:id",
-        element: <PrivateRoute><SurveyDetails></SurveyDetails></PrivateRoute>
+        element: <PrivateRoute><SurveyDetails/></PrivateRoute>
       },
       {
         path: "/pricing",
-        element: <PrivateRoute><PricingCard></PricingCard></PrivateRoute>
+        element: <PrivateRoute><PricingCard/></PrivateRoute>
       },
       {
         path: "/payment",
-        element: <PrivateRoute><Payment></Payment></PrivateRoute>
+        element: <PrivateRoute><Payment/></PrivateRoute>
       },
     ],
   },

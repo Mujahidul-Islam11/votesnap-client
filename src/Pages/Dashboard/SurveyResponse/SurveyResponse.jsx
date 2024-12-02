@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import AxiosSecure from "../../../Hooks/AxiosSecure/AxiosSecure";
-import PieChart from "../../PieChart/PieChart";
 import { Helmet } from "react-helmet";
 import "../../../index.css";
+import PieChart from "../PieChart/PieChart";
 
 const SurveyResponse = () => {
   const axiosSecure = AxiosSecure();
@@ -52,7 +52,7 @@ const SurveyResponse = () => {
           </tbody>
         </table>
       </div>
-      <PieChart yesVote={yesVote} noVote={noVote}></PieChart>
+      <PieChart yesVote={yesVote} noVote={noVote}/>
     </div>
   );
 };
