@@ -15,8 +15,8 @@ const SurveysCard = ({ survey }) => {
         <span className="badge bg-[#2F71FF] text-[12px] font-extrabold text-white">{survey.category}</span>
         <h2 className="inline-block text-[#2F71FF]">{survey.publishedDate}</h2>
         </div>
-        <h2 className="card-title">{survey.title}</h2>
-        <p>{survey.description}</p>
+        <h2 className="card-title text-dc">{survey.title}</h2>
+        <p className="text-sdc">{survey.description}</p>
         <NavLink to={user ? `/details/${survey._id}`: '/login'}>
           <button className="btn w-full btn-primary bg-[#2F71FF] text-white border-none hover:bg-[#2f71ffbf] mt-6">Details</button>
         </NavLink>
