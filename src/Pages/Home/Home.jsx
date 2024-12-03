@@ -10,7 +10,7 @@ import Partners from "./Partners/Partners";
 const Home = () => {
 
   return (
-    <>
+    <div className="space-y-14 md:space-y-24">
       <Helmet>
         <title>Free Online Survey Maker | Unlimited Surveys | Vote snap</title>
       </Helmet>
@@ -19,7 +19,7 @@ const Home = () => {
       <PopularSurveys/>
       <FAQSection />
       <NewsLetter />
-    </>
+    </div>
   );
 };
 

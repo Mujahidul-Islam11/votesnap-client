@@ -5,7 +5,7 @@ const Partners = () => {
   return (
     <div className="w-full py-14 ">
       {/* Heading Section */}
-      <ComponentTitle title={"Our Partners"} desc={"Our online survey creator is used globally by corporations, universities, governments, and individuals."}/>
+      <ComponentTitle titleFirst={"Our "} titleLast={"Partners"} desc={"Our online survey creator is used globally by corporations, universities, governments, and individuals."}/>
 
       {/* Logos Section */}
       <div className="max-w-6xl mx-6 md:mx-auto grid grid-cols-2 md:grid-cols-6 gap-8 items-center p-8 md:p-16 mt-10 border rounded-md shadow-md">

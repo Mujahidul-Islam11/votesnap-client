@@ -29,7 +29,7 @@ const Surveys = () => {
       <Helmet>
         <title>Surveys | explore surveys</title>
       </Helmet>
-      <ComponentTitle title={"Surveys"} desc={"Explore unlimited surveys in vote snap"}/>
+      <ComponentTitle titleFirst={"Surveys"} desc={"Explore unlimited surveys in vote snap"}/>
       <div className="grid md:grid-cols-3 my-10 gap-6 px-4 md:gap-6">
         {published?.slice(0, sliceBtn).map((sur) => (
           <SurveysCard

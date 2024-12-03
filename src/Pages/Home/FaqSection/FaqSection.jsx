@@ -13,7 +13,7 @@ const FAQSection = () => {
   };
   return(
     <div className="w-full py-10 my-7 md:my-14 max-w-7xl mx-auto md:px-12">
-    <ComponentTitle title={"Frequently Asked Questions"} desc={"What is on your mind check it out"}/>
+    <ComponentTitle titleFirst={"Frequently Asked "} titleLast={"Questions"} desc={"What is on your mind check it out"}/>
     <div className='px-4 md:flex gap-20 items-center'>
       <div className='mb-4 md:w-1/2'>
       <Lottie options={defaultOptions}></Lottie>

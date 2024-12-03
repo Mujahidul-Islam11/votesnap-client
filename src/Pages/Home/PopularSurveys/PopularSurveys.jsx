@@ -18,7 +18,7 @@ const PopularSurveys = () => {
 
     return (
         <div className="my-7 md:my-14 max-w-7xl mx-auto md:px-12">
-        <ComponentTitle title={"Popular Surveys"} desc={"Explore the latest surveys"} />
+        <ComponentTitle titleFirst={"Popular "} titleLast={"Surveys"} desc={"Explore the latest surveys"} />
         <div className="grid md:grid-cols-3 my-10 gap-6 px-4 md:gap-6">
           {published?.slice(0, 3).map((sur) => (
             <SurveysCard
