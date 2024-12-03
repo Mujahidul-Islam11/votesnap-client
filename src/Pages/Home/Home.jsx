@@ -5,6 +5,7 @@ import FAQSection from "./FaqSection/FaqSection";
 import Banner from "./Banner/Banner";
 import NewsLetter from "./Subscribe/NewsLetter";
 import PopularSurveys from "./PopularSurveys/PopularSurveys";
+import Partners from "./Partners/Partners";
 
 const Home = () => {
 
@@ -14,6 +15,7 @@ const Home = () => {
         <title>Free Online Survey Maker | Unlimited Surveys | Vote snap</title>
       </Helmet>
       <Banner />
+      <Partners/>
       <PopularSurveys/>
       <FAQSection />
       <NewsLetter />
