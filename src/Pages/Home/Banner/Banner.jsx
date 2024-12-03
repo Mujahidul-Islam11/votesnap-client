@@ -1,5 +1,6 @@
 import Lottie from "react-lottie";
 import animationData from "../../../../public/survey-banner.json"
+import { NavLink } from "react-router-dom";
 
 
 const Banner = () => {
@@ -22,7 +23,9 @@ const Banner = () => {
           <p className="py-6 md:text-3xl text-sdc font-light">
           Create free online surveys <br /> with unlimited questions and responses!
           </p>
+          <NavLink to={"/Login"}>
           <button className="btn btn-primary bg-[#2F71FF] px-8 md:px-12 text-white border-none hover:bg-[#2f71ffbf] flex items-center gap-2">Get Started <span className=" text-lg font-semibold">&#8594;</span></button>
+          </NavLink>
         </div>
       </div>
     </div>
