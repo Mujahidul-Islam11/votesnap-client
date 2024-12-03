@@ -3,6 +3,7 @@ import { Disclosure } from '@headlessui/react';
 import { ChevronUpIcon } from '@heroicons/react/20/solid';
 import Lottie from 'react-lottie';
 import animationData from "../../../../public/FAQ.json"
+import ComponentTitle from '../../../UI/ComponentTitle';
 
 const FAQSection = () => {
   const defaultOptions = {
@@ -12,8 +13,7 @@ const FAQSection = () => {
   };
   return(
     <div className="w-full py-10 my-7 md:my-14 max-w-7xl mx-auto md:px-12">
-    <h3 className='text-3xl  md:text-5xl font-bold text-center mb-2 md:mb-4'>FAQ<span className='text-[#2F71FF]'>!</span></h3>
-    <p className='text-sm md:text-xl text-center text-gray-600'>What is on your mind check it out</p>
+    <ComponentTitle title={"Frequently Asked Questions"} desc={"What is on your mind check it out"}/>
     <div className='px-4 md:flex gap-20 items-center'>
       <div className='mb-4 md:w-1/2'>
       <Lottie options={defaultOptions}></Lottie>
