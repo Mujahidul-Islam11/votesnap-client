@@ -12,7 +12,7 @@ const SurveysCard = ({ survey }) => {
     <div className="card bg-white text-black shadow-md md:shadow-xl py-4 border">
       <div className="card-body">
         <div className="flex justify-between">
-        <span className="badge bg-[#2F71FF] text-[14px] font-extrabold text-white">{survey.category}</span>
+        <span className="badge bg-[#2F71FF] text-[12px] font-extrabold text-white">{survey.category}</span>
         <h2 className="inline-block text-[#2F71FF]">{survey.publishedDate}</h2>
         </div>
         <h2 className="card-title">{survey.title}</h2>
