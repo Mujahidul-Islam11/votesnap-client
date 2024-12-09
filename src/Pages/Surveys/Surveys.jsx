@@ -1,28 +1,23 @@
+// eslint-disable-next-line no-unused-vars
 /* eslint-disable no-unused-vars */
-import { useContext, useState } from "react";
-import AxiosSecure from "../../Hooks/AxiosSecure/AxiosSecure";
-import { AuthConext } from "../../AuthProvider/AuthProvider";
+import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { HiAdjustmentsVertical } from "react-icons/hi2";
 import SurveysCard from "../Dashboard/SurveysCard/SurveysCard";
 import { Helmet } from "react-helmet";
 import ComponentTitle from "../../UI/ComponentTitle";
+import AxiosOpen from "../../Hooks/AxiosSecure/AxiosOpen";
 
 const Surveys = () => {
   const [sliceBtn, setSliceBtn] = useState(6);
 
-  const axiosSecure = AxiosSecure();
-  // eslint-disable-next-line no-unused-vars
-  const { user } = useContext(AuthConext);
+  const axiosPublic = AxiosOpen();
   const { data: published = [], refetch } = useQuery({
     queryKey: ["published"],
     queryFn: async () => {
-      const res = await axiosSecure.get(`/surveyor`);
+      const res = await axiosPublic.get(`/surveyor`);
       return res.data;
     },
   });
-
-  // slice method (dynamically)
 
   return (
     <div className="max-w-7xl mx-auto">
