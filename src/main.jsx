@@ -111,7 +111,7 @@ const router = createBrowserRouter([
         element: <SurveyorPrivateRoute><UserFeedBack></UserFeedBack></SurveyorPrivateRoute>,
       },
       {
-        path: "adminFeeback",
+        path: "adminFeedback",
         element: <SurveyorPrivateRoute><AdminFeedBack></AdminFeedBack></SurveyorPrivateRoute>,
       },
       {

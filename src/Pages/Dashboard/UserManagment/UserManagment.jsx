@@ -6,7 +6,8 @@ import "../../../index.css"
 
 const UserManagment = () => {
   const [users, refetch] = AllUsers();
-  const axiosSecure = AxiosSecure()
+  const axiosSecure = AxiosSecure();
+
   const handleAdmin = (user) =>{
     axiosSecure.patch(`/users/admin/${user._id}`)
     .then(res => {
@@ -25,6 +26,8 @@ const UserManagment = () => {
         }
     })
 }
+
+console.log(users)
   return (
     <div className="overflow-x-auto mx-10 mt-6 h-screen survey-response">
       <Helmet>

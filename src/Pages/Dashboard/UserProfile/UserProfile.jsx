@@ -4,10 +4,12 @@ import { FaUserEdit } from "react-icons/fa";
 import { AuthConext } from "../../../AuthProvider/AuthProvider";
 import swal from "sweetalert";
 import { Helmet } from "react-helmet";
+import { useNavigate } from "react-router-dom";
 
 const UserProfile = () => {
   const { user, updateUser } = useContext(AuthConext);
   const [isEditing, setIsEditing] = useState(false);
+  const navigation = useNavigate();
   
   const handleUpdateProfile = (e) => {
     e.preventDefault();
@@ -16,10 +18,11 @@ const UserProfile = () => {
     const photo = form.photo.value;
     updateUser(name, photo)
     .then(res => {
-        swal('Profile Updated', 'success')
+        swal('Profile Updated','Profile Picture Updated', 'success');
+
     })
     .catch(err =>{
-        swal('Something Went Wrong', 'warning')
+        swal('Something Went Wrong', 'Try Out Later', 'warning')
     })
   };
 
