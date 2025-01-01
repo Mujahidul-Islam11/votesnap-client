@@ -4,8 +4,8 @@ import { AuthConext } from "../../AuthProvider/AuthProvider";
 
 
 const axiosSecure = axios.create({
-    baseURL: 'http://localhost:5000'
-    // baseURL: 'https://yoo-survey-server.vercel.app'
+    // baseURL: 'http://localhost:5000'
+    baseURL: 'https://yoo-survey-server.vercel.app'
 })
 
 const AxiosSecure = () => {

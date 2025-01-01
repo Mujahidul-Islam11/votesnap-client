@@ -27,7 +27,6 @@ const UserManagment = () => {
     })
 }
 
-console.log(users)
   return (
     <div className="overflow-x-auto mx-10 mt-6 h-screen survey-response">
       <Helmet>
@@ -51,9 +50,7 @@ console.log(users)
               <th>{index + 1}</th>
               <td>
                 <div className="flex items-center gap-3">
-                  <div>
-                    <div className="">{user.name}</div>
-                  </div>
+                    <div>{user.name}</div>
                 </div>
               </td>
               <td>

@@ -6,6 +6,7 @@ import Banner from "./Banner/Banner";
 import NewsLetter from "./Subscribe/NewsLetter";
 import PopularSurveys from "./PopularSurveys/PopularSurveys";
 import Partners from "./Partners/Partners";
+import SurveyProSection from "./SurveyProSection/SurveyProSection";
 
 const Home = () => {
 
@@ -17,6 +18,7 @@ const Home = () => {
       <Banner />
       <Partners/>
       <PopularSurveys/>
+      <SurveyProSection/>
       <FAQSection />
       <NewsLetter />
     </div>
